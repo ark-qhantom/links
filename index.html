@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QHANTOM — Links</title>
+<meta name="description" content="Every Qhantom link in one place — website, music, YouTube, Instagram, X.">
+<meta name="theme-color" content="#02020e">
+<meta property="og:title" content="QHANTOM — Links">
+<meta property="og:description" content="Every Qhantom link in one place — website, music, YouTube, Instagram, X.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ark-qhantom.github.io/links/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%232b2bff' stroke-width='2.5'/%3E%3Cline x1='22' y1='22' x2='28' y2='28' stroke='%232b2bff' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --void: #02020e;
+    --ultra: #1a1af0;
+    --cobalt: #2b2bff;
+    --glow: #aab4ff;
+    --ink: #dfe4ff;
+    --dim: #6b74c9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { background: var(--void); }
+
+  body {
+    font-family: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+    color: var(--ink);
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse 120% 55% at 50% 115%, rgba(43, 43, 255, .38) 0%, rgba(26, 26, 240, .16) 45%, transparent 75%),
+      linear-gradient(180deg, #02020e 0%, #04041c 55%, #070738 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+  }
+
+  /* ---------- atmosphere: falling light beams ---------- */
+  .beams {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .beam {
+    position: absolute;
+    top: -10%;
+    height: 120%;
+    background:
+      repeating-linear-gradient(90deg,
+        rgba(170, 180, 255, .30) 0 1px, transparent 1px 4px,
+        rgba(43, 43, 255, .22) 4px 5px, transparent 5px 9px);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 62%, transparent 100%);
+            mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 62%, transparent 100%);
+    opacity: .5;
+    animation: shimmer 7s ease-in-out infinite alternate;
+  }
+
+  .beam::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(180deg,
+      rgba(223, 228, 255, .16) 0 2px, transparent 2px 26px);
+    animation: fall 3.2s linear infinite;
+  }
+
+  .beam:nth-child(1) { left: 4%;  width: 34px; animation-delay: -1s; }
+  .beam:nth-child(2) { left: 14%; width: 10px; opacity: .35; animation-delay: -3s; }
+  .beam:nth-child(3) { left: 26%; width: 52px; opacity: .28; animation-delay: -5s; }
+  .beam:nth-child(4) { left: 47%; width: 8px;  opacity: .40; animation-delay: -2s; }
+  .beam:nth-child(5) { left: 63%; width: 40px; opacity: .30; animation-delay: -6s; }
+  .beam:nth-child(6) { left: 79%; width: 14px; opacity: .45; animation-delay: -4s; }
+  .beam:nth-child(7) { left: 91%; width: 44px; opacity: .25; animation-delay: -1.5s; }
+
+  .beam:nth-child(2)::after { animation-duration: 4.6s; }
+  .beam:nth-child(3)::after { animation-duration: 5.8s; }
+  .beam:nth-child(4)::after { animation-duration: 3.8s; }
+  .beam:nth-child(5)::after { animation-duration: 5.2s; }
+  .beam:nth-child(6)::after { animation-duration: 4.1s; }
+  .beam:nth-child(7)::after { animation-duration: 6.4s; }
+
+  @keyframes fall {
+    from { transform: translateY(-26px); }
+    to   { transform: translateY(0); }
+  }
+
+  @keyframes shimmer {
+    from { opacity: .18; }
+    to   { opacity: .55; }
+  }
+
+  /* ---------- atmosphere: halftone grain ---------- */
+  .grain {
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(170, 180, 255, .13) 1px, transparent 1px);
+    background-size: 3px 3px;
+    mix-blend-mode: overlay;
+  }
+
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: .16;
+    mix-blend-mode: overlay;
+  }
+
+  /* ---------- layout ---------- */
+  .wrap {
+    position: relative;
+    z-index: 2;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 56px 20px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ---------- header: ringed world ---------- */
+  .orb-rig {
+    position: relative;
+    width: 132px;
+    height: 132px;
+    margin-bottom: 10px;
+  }
+
+  .orb {
+    position: absolute;
+    inset: 14px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 34% 28%, #b9c2ff 0%, #4a4aff 34%, #1414c8 62%, #05052e 100%);
+    box-shadow:
+      0 0 22px rgba(43, 43, 255, .85),
+      0 0 70px rgba(43, 43, 255, .45),
+      0 0 140px rgba(26, 26, 240, .30),
+      inset -8px -10px 26px rgba(0, 0, 10, .8);
+    animation: hover-drift 6s ease-in-out infinite alternate;
+  }
+
+  .orb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-image: radial-gradient(circle, rgba(2, 2, 14, .5) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+
+  .ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(190, 198, 255, .85);
+    box-shadow:
+      0 0 12px rgba(170, 180, 255, .5),
+      inset 0 0 12px rgba(170, 180, 255, .25);
+    animation: hover-drift 6s ease-in-out infinite alternate;
+  }
+
+  /* light dripping off the world */
+  .orb-rig::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 96%;
+    width: 74px;
+    height: 130px;
+    transform: translateX(-50%);
+    background:
+      repeating-linear-gradient(90deg,
+        rgba(170, 180, 255, .5) 0 1px, transparent 1px 7px,
+        rgba(43, 43, 255, .4) 7px 8px, transparent 8px 13px);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 95%);
+            mask-image: linear-gradient(180deg, #000 0%, transparent 95%);
+    opacity: .8;
+    pointer-events: none;
+  }
+
+  @keyframes hover-drift {
+    from { transform: translateY(-3px); }
+    to   { transform: translateY(3px); }
+  }
+
+  h1 {
+    margin-top: 44px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: .42em;
+    text-indent: .42em; /* recenter after tracking */
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow:
+      0 0 14px rgba(170, 180, 255, .8),
+      0 0 44px rgba(43, 43, 255, .6);
+  }
+
+  .tagline {
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: .34em;
+    text-indent: .34em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  /* ---------- sections ---------- */
+  .section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 26px 0 4px;
+    color: var(--dim);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .38em;
+    text-indent: .38em;
+    text-transform: uppercase;
+  }
+
+  .section::before,
+  .section::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(107, 116, 201, .55));
+  }
+
+  .section::after {
+    background: linear-gradient(90deg, rgba(107, 116, 201, .55), transparent);
+  }
+
+  /* ---------- links ---------- */
+  .links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 34px;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 18px;
+    border: 1px solid rgba(90, 98, 230, .45);
+    border-radius: 4px;
+    background: rgba(8, 9, 38, .58);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    transition: border-color .22s, box-shadow .22s, background .22s, transform .22s;
+    opacity: 0;
+    animation: rise .6s ease forwards;
+  }
+
+  .btn:hover,
+  .btn:focus-visible {
+    border-color: rgba(170, 180, 255, .95);
+    background: rgba(26, 26, 240, .22);
+    box-shadow:
+      0 0 16px rgba(43, 43, 255, .55),
+      inset 0 0 18px rgba(43, 43, 255, .18);
+    transform: translateY(-2px);
+    outline: none;
+  }
+
+  .btn svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    fill: var(--glow);
+    filter: drop-shadow(0 0 5px rgba(43, 43, 255, .9));
+  }
+
+  .btn .label { flex: 1; }
+
+  .btn .arrow {
+    color: var(--dim);
+    font-size: 12px;
+    transition: color .22s, transform .22s;
+  }
+
+  .btn:hover .arrow,
+  .btn:focus-visible .arrow {
+    color: var(--glow);
+    transform: translateX(3px);
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .links > .btn:nth-of-type(1)  { animation-delay: .05s; }
+  .links > .btn:nth-of-type(2)  { animation-delay: .10s; }
+  .links > .btn:nth-of-type(3)  { animation-delay: .15s; }
+  .links > .btn:nth-of-type(4)  { animation-delay: .20s; }
+  .links > .btn:nth-of-type(5)  { animation-delay: .25s; }
+  .links > .btn:nth-of-type(6)  { animation-delay: .30s; }
+  .links > .btn:nth-of-type(7)  { animation-delay: .35s; }
+  .links > .btn:nth-of-type(8)  { animation-delay: .40s; }
+  .links > .btn:nth-of-type(9)  { animation-delay: .45s; }
+  .links > .btn:nth-of-type(10) { animation-delay: .50s; }
+  .links > .btn:nth-of-type(11) { animation-delay: .55s; }
+  .links > .btn:nth-of-type(12) { animation-delay: .60s; }
+
+  footer {
+    margin-top: 52px;
+    font-size: 10px;
+    letter-spacing: .3em;
+    text-indent: .3em;
+    text-transform: uppercase;
+    color: rgba(107, 116, 201, .6);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .beam, .beam::after, .orb, .ring { animation: none; }
+    .btn { animation: none; opacity: 1; }
+  }
+
+  @media (max-width: 360px) {
+    h1 { font-size: 24px; }
+    .btn { font-size: 12px; padding: 13px 14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="beams" aria-hidden="true">
+  <div class="beam"></div>
+  <div class="beam"></div>
+  <div class="beam"></div>
+  <div class="beam"></div>
+  <div class="beam"></div>
+  <div class="beam"></div>
+  <div class="beam"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<main class="wrap">
+
+  <div class="orb-rig" aria-hidden="true">
+    <div class="orb"></div>
+    <div class="ring"></div>
+  </div>
+
+  <h1>Qhantom</h1>
+  <p class="tagline">Worlds in suspension</p>
+
+  <nav class="links" aria-label="Qhantom links">
+
+    <a class="btn" href="https://qhantom.com" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.93 9h-3.02a15.7 15.7 0 0 0-1.2-5.36A8.02 8.02 0 0 1 19.93 11zM12 4.06c.9 1.2 1.7 3.4 1.9 6.94h-3.8c.2-3.54 1-5.74 1.9-6.94zM8.29 5.64A15.7 15.7 0 0 0 7.09 11H4.07a8.02 8.02 0 0 1 4.22-5.36zM4.07 13h3.02c.14 2.06.55 3.9 1.2 5.36A8.02 8.02 0 0 1 4.07 13zM12 19.94c-.9-1.2-1.7-3.4-1.9-6.94h3.8c-.2 3.54-1 5.74-1.9 6.94zm3.71-1.58c.65-1.46 1.06-3.3 1.2-5.36h3.02a8.02 8.02 0 0 1-4.22 5.36z"/></svg>
+      <span class="label">qhantom.com</span>
+      <span class="arrow">&#9656;</span>
+    </a>
+
+    <a class="btn" href="https://open.spotify.com/artist/20ad4aQloRlCgLLmRa5PVy?si=Ps-nU_JzRgSushCeQiNEUQ&amp;utm_source=copy-link" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      <span class="label">Spotify</span>
+      <span class="arrow">&#9656;</span>
+    </a>
+
+    <h2 class="section">YouTube</h2>
+
+    <a class="btn" href="https://youtube.com/@qhantomlab?si=pJRVMJGgamj2VTBZ" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.51A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.123 2.136c1.872.509 9.377.509 9.377.509s7.505 0 9.377-.51A3.02 3.02 0 0 0 23.5 17.81C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      <span class="label">Qhantom Lab</span>
+      <span class="arrow">&#9656;</span>
+    </a>
+
+    <a class="btn" href="https://youtube.com/@realmrunnerstv?si=nTa6j8DI_cgU3oD3" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.51A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.123 2.136c1.872.509 9.377.509 9.377.509s7.505 0 9.377-.51A3.02 3.02 0 0 0 23.5 17.81C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      <span class="label">Realm Runners TV</span>
+      <span class="arrow">&#9656;</span>
+    </a>
+
+    <a class="btn" href="https://youtube.com/@qhantomcorporation?si=4FCRnabkWYSUZlTQ" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.51A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.123 2.136c1.872.509 9.377.509 9.377.509s7.505 0 9.377-.51A3.02 3.02 0 0 0 23.5 17.81C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      <span class="label">Realm Runners Music</span>
+      <span class="arrow">&#9656;</span>
+    </a>
+
+    <h2 class="section">Instagram</h2>
+
+    <a class="btn" href="https://www.instagram.com/qhantomcorporation?igsh=MTRqNDN4Z2h1Z3Vmbw%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      <span class="label">@qhantomcorporation</span>
+      <span class="arrow">&#9656;</span>
+    </a>
+
+    <a class="btn" href="https://www.instagram.com/realm_runners_tv" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      <span class="label">@realm_runners_tv</span>
+      <span class="arrow">&#9656;</span>
+    </a>
+
+    <a class="btn" href="https://www.instagram.com/qhantomtech?igsh=MW42NjNod2Q5dGt5dg%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      <span class="label">@qhantomtech</span>
+      <span class="arrow">&#9656;</span>
+    </a>
+
+    <h2 class="section">X</h2>
+
+    <a class="btn" href="https://x.com/qhantomresearch?s=11" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      <span class="label">@qhantomresearch</span>
+      <span class="arrow">&#9656;</span>
+    </a>
+
+    <a class="btn" href="https://x.com/ark_qhantom?s=11" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      <span class="label">@ark_qhantom</span>
+      <span class="arrow">&#9656;</span>
+    </a>
+
+    <a class="btn" href="https://x.com/warzanvv?s=21" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      <span class="label">@warzanvv</span>
+      <span class="arrow">&#9656;</span>
+    </a>
+
+    <a class="btn" href="https://x.com/nikofftimemusic?s=21" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      <span class="label">@nikofftimemusic</span>
+      <span class="arrow">&#9656;</span>
+    </a>
+
+  </nav>
+
+  <footer>&copy; 2026 Qhantom</footer>
+
+</main>
+
+</body>
+</html>
