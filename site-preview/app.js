@@ -30,7 +30,7 @@
 
     document.querySelectorAll('[data-nav]').forEach(function (a) {
       var target = a.getAttribute('href').slice(1);
-      var inRealmRunners = target === 'realm-runners' && /^(qigana|celestara|archive)$/.test(name);
+      var inRealmRunners = !a.hasAttribute('data-exact') && target === 'realm-runners' && /^(qigana|celestara|archive|sonics)$/.test(name);
       if (target === name || inRealmRunners) a.setAttribute('aria-current', 'page');
       else a.removeAttribute('aria-current');
     });
