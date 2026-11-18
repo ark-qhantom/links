@@ -293,6 +293,12 @@ body.entering .globe:not(:hover):not(:focus) { opacity: .25; transition: opacity
 .still figcaption { font: normal 700 .7rem/1 var(--f-body); letter-spacing: .18em; text-transform: uppercase; color: var(--lav); padding: 12px 18px; }
 @media (max-width: 760px) { .realm-grid { grid-template-columns: 1fr; gap: 16px; } }
 
+/* ---------- about ---------- */
+.about-line { font-family: var(--f-display); font-style: italic; font-weight: 800; font-stretch: 125%; font-size: clamp(1.15rem, 2.4vw, 1.55rem); line-height: 1.2; color: #fff; text-shadow: 0 0 16px var(--glow); }
+.prose { gap: 20px; }
+.prose > p { font-size: 1.1rem; line-height: 1.65; max-width: 68ch; }
+.realm .lede { font-size: clamp(1rem, 1.4vw, 1.1rem); }
+
 /* ---------- archive / sonics / about / careers / community ---------- */
 .frescoes { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; width: 100%; }
 .frescoes img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--line); border-radius: 18px; }
