@@ -211,6 +211,29 @@ body:not([data-realm]) .sky-base, body[data-realm="qigana"] .sky-qigana, body[da
   .dest a { min-height: 76px; border-radius: 999px; padding-inline: 26px; }
 }
 
+
+/* desktop: destinations are set straight onto the ground, no boxes */
+@media (min-width: 761px) {
+  .hero-top { padding-top: 52px; }
+  .hero-ground { margin-top: -132px; padding-bottom: 40px; }
+  .dest { gap: 0; }
+  .dest a { background: none; border: 0; border-left: 1px solid rgba(10, 22, 153, .32); border-radius: 0; box-shadow: none; min-height: 0; padding: 4px 16px 4px 26px; gap: 4px; }
+  .dest a:first-child { border-left-color: transparent; }
+  .dest a:hover, .dest a:focus-visible { box-shadow: none; transform: none; border-color: rgba(10, 22, 153, .32); }
+  .dest a:first-child:hover, .dest a:first-child:focus-visible { border-left-color: transparent; }
+  .dest-name { font-size: clamp(1.25rem, 2vw, 1.7rem); color: #0a1699; transition: color .2s, text-shadow .2s; }
+  .dest-name::after { content: "›"; font: normal 400 1em/1 var(--f-body); display: inline-block; margin-left: .3em; transition: transform .2s; }
+  .dest a:hover .dest-name, .dest a:focus-visible .dest-name { color: #fff; text-shadow: 0 0 18px #1a2cff, 0 0 4px #1a2cff; }
+  .dest a:hover .dest-name::after { transform: translateX(6px); }
+  .dest-what { color: #1626a8; font-weight: 600; font-size: .92rem; }
+  .dest .tag { margin-top: 4px; padding: 0; border: 0; background: none; color: #0a1699; opacity: .78; }
+}
+@media (min-width: 761px) and (max-width: 1000px) {
+  .dest { row-gap: 22px; }
+  .dest a:nth-child(3) { border-left-color: transparent; }
+  .hero-ground { margin-top: -150px; }
+}
+
 /* ---------- shared blocks ---------- */
 .chain { display: grid; width: 100%; border-left: 1px solid var(--line); }
 .chain > div { padding: 12px 0 12px 22px; position: relative; }
