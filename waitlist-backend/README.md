@@ -1,7 +1,9 @@
 # Qonvergence Waitlist backend
 
 A small Cloudflare Worker that stores waitlist signups in a D1 database.
-**Not deployed.** It has only been run and tested locally.
+Deployed on 18 Nov 2026 at `https://qhantom-waitlist.qhantomcorporation.workers.dev`
+(D1 database `qhantom-waitlist`). It is not yet on a qhantom.com address and the
+site form is not connected to it.
 
 ## What it does
 

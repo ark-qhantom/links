@@ -2,8 +2,10 @@ name = "qhantom-waitlist"
 main = "src/index.js"
 compatibility_date = "2026-10-01"
 
-# Not deployed. Before deploying: create the D1 database, paste its id below,
-# set the RATE_SALT secret, and choose the route. See README.md.
+# Deployed 18 Nov 2026 to qhantom-waitlist.qhantomcorporation.workers.dev only.
+# No route on qhantom.com and no DNS change has been made; both need approval.
+# The first deploy went through the Cloudflare connector, so D1 has no record of
+# migration 0001. Re-applying it is harmless (CREATE TABLE IF NOT EXISTS).
 
 [vars]
 # Exact site origins allowed to post from a browser, comma separated.
@@ -14,5 +16,5 @@ CONSENT_TEXT_VERSION = "draft-1"
 [[d1_databases]]
 binding = "DB"
 database_name = "qhantom-waitlist"
-database_id = "REPLACE_WITH_D1_DATABASE_ID"
+database_id = "effe4be9-186f-4363-832a-fa4de40fc098"
 migrations_dir = "migrations"
