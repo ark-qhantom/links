@@ -10,7 +10,7 @@
   --ultra: #7d90ff;       /* borders, focus */
   --lav: #b9c3ff;         /* labels, links */
   --ice: #eef0ff;         /* text */
-  --dim: #a3aef2;         /* secondary text */
+  --dim: #c6cdff;         /* secondary text */
   --panel: rgba(4, 12, 92, .62);
   --line: rgba(150, 165, 255, .5);
   --glow: rgba(110, 135, 255, .75);
@@ -155,8 +155,8 @@ body:not([data-realm]) .sky-base, body[data-realm="qigana"] .sky-qigana, body[da
 
 .sky-base { background: radial-gradient(ellipse 90% 60% at 50% 108%, #1230ff 0%, #0a1cc4 30%, rgba(6, 16, 120, 0) 70%), linear-gradient(180deg, #01063a 0%, #031066 45%, #06168e 100%); }
 .sky-base .grid { position: absolute; inset: 0 0 auto; width: 100%; height: 46%; -webkit-mask-image: linear-gradient(180deg, #000 20%, transparent 100%); mask-image: linear-gradient(180deg, #000 20%, transparent 100%); }
-.sky-base .ring { left: 50%; top: 24%; width: max(128vw, 1050px); aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; border: 2px solid rgba(60, 96, 255, .85); box-shadow: 0 0 34px rgba(40, 80, 255, .7), inset 0 0 60px rgba(20, 50, 255, .25); }
-.sky-base .planet { left: 50%; top: 84%; width: max(190vw, 1500px); aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(circle at 50% 0%, #1634ff 0%, #0a1cc4 22%, #06128e 55%); border-top: 3px solid #dfe6ff; box-shadow: 0 -8px 46px rgba(130, 160, 255, .95), 0 -2px 120px rgba(40, 80, 255, .9); }
+.sky-base .ring { opacity: .45; left: 50%; top: 24%; width: max(128vw, 1050px); aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; border: 2px solid rgba(60, 96, 255, .85); box-shadow: 0 0 34px rgba(40, 80, 255, .7), inset 0 0 60px rgba(20, 50, 255, .25); }
+.sky-base .planet { left: 50%; top: 94%; width: max(190vw, 1500px); aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(circle at 50% 0%, #1634ff 0%, #0a1cc4 22%, #06128e 55%); border-top: 3px solid #dfe6ff; box-shadow: 0 -8px 46px rgba(130, 160, 255, .95), 0 -2px 120px rgba(40, 80, 255, .9); }
 
 .sky-qigana { background: linear-gradient(180deg, #05062a 0%, #130f5c 42%, #2c2196 78%, #4a3fc2 100%); }
 .sky-qigana i { left: -20%; width: 140%; height: 46%; top: 2%; filter: blur(38px); mix-blend-mode: screen; transform-origin: 50% 100%; animation: aurora 16s ease-in-out infinite alternate; }
@@ -243,18 +243,24 @@ body:not([data-realm]) .sky-base, body[data-realm="qigana"] .sky-qigana, body[da
 .go { font-weight: 800; color: #fff; }
 .go::after { content: " ›"; font-style: normal; }
 
-.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; max-width: 900px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .steps li { display: flex; flex-direction: column; gap: 10px; padding: 26px 28px 28px 0; }
 .steps li + li { padding-left: 28px; border-left: 1px solid var(--line); }
 .steps strong { font-family: var(--f-display); font-style: italic; font-weight: 800; font-stretch: 125%; font-size: clamp(1.3rem, 2.2vw, 1.75rem); line-height: 1.1; color: #fff; text-shadow: 0 0 16px var(--glow); }
-.steps span { font-size: 1rem; max-width: 30ch; }
-@media (max-width: 760px) {
+.steps span { font-size: 1.05rem; color: var(--ice); }
+@media (max-width: 900px) {
   .steps { grid-template-columns: 1fr; }
-  .steps li { padding: 22px 0; }
+  .steps li { padding: 20px 0; gap: 6px; }
   .steps li + li { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
   .steps span { max-width: none; }
 }
-.research { padding-top: 26px; border-top: 1px solid var(--line); }
+.pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 48px; width: 100%; max-width: 900px; }
+.pair .block { gap: 10px; }
+.pair p:not(.eyebrow) { font-size: 1.05rem; max-width: 34ch; }
+@media (max-width: 760px) { .pair { grid-template-columns: 1fr; } }
+/* running text is upright for readability; headings, buttons and labels stay italic */
+.lede, .block > p:not(.eyebrow), .prose p, .fine, .steps span, .row-main span, .chain dd, .pv p, .feature-body p, .check span, .mock, .tracks span, .credits dd, .plain li, .pair p:not(.eyebrow) { font-style: normal; }
+.fine { color: var(--ice); opacity: .88; }
 
 .rows { width: 100%; border-top: 1px solid var(--line); }
 .row { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; min-height: 68px; padding: 14px 4px; color: var(--ice); text-decoration: none; border-bottom: 1px solid var(--line); transition: padding .2s; }
