@@ -167,16 +167,17 @@
       <p class="auth-sub" aria-hidden="true">Waitlist</p>
       <p class="lede">Leave your email and we will write when Qonvergence opens.</p>
     </header>
-    <form class="form" id="waitlist-form" novalidate>
+    <form class="form" id="waitlist-form" data-endpoint="" novalidate>
       <div class="field" id="wl-field">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-4 4-5.5 7.5-5.5s6.500 1.500 7.500 5.500z"/></svg>
         <label class="visually-hidden" for="wl-email">Email address</label>
         <input id="wl-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="Email" required aria-describedby="wl-msg">
       </div>
+      <div class="visually-hidden" aria-hidden="true"><label for="wl-website">Leave this empty</label><input id="wl-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
       <label class="check" for="wl-consent"><input id="wl-consent" name="consent" type="checkbox" required><span>I agree to receive email from Qhantom about Qonvergence.</span></label>
-      <button class="btn" type="submit">Join the waitlist <small>Preview</small></button>
+      <button class="btn" type="submit" id="wl-submit">Join the waitlist <small id="wl-preview-tag">Preview</small></button>
       <a class="btn ghost" href="#qonvergence" data-nav>Back to Qonvergence</a>
-      <p class="mock" role="note"><strong>Preview only. Nothing is sent or stored.</strong></p>
+      <p class="mock" role="note" id="wl-mock"><strong>Preview only. Nothing is sent or stored.</strong></p>
       <p class="form-msg" id="wl-msg" role="status" aria-live="polite"></p>
       <p class="fine">Draft privacy wording: we use your email only for Qonvergence updates. To be removed, write to <span class="addr">hello@qhantom.com</span>.</p>
     </form>

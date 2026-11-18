@@ -1,4 +1,4 @@
-/* Qhantom console preview: hash router, realm entry, mock waitlist. No network calls. */
+/* Qhantom console preview: hash router, realm entry, waitlist form (mock unless an endpoint is set). */
 (function () {
   'use strict';
 
@@ -119,30 +119,69 @@
     });
   });
 
-  /* waitlist: MOCK. Validates, then says plainly that nothing was sent. */
+  /* waitlist. With no endpoint set on the form (data-endpoint=""), this is a
+     MOCK: it validates and says plainly that nothing was sent. With an endpoint,
+     it posts to the waitlist service and reports what actually happened. */
   var form = document.getElementById('waitlist-form');
   if (form) {
     var msg = document.getElementById('wl-msg');
     var email = document.getElementById('wl-email');
     var consent = document.getElementById('wl-consent');
     var field = document.getElementById('wl-field');
+    var website = document.getElementById('wl-website');
+    var submit = document.getElementById('wl-submit');
+    var busy = false;
+    var say = function (kind, text) { msg.className = 'form-msg' + (kind ? ' is-' + kind : ''); msg.textContent = text; };
+    var live = function () { return (form.dataset.endpoint || '').trim(); };
+    var syncMode = function () {
+      var on = !!live();
+      document.getElementById('wl-mock').hidden = on;
+      document.getElementById('wl-preview-tag').hidden = on;
+    };
+    syncMode();
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      msg.className = 'form-msg';
+      if (busy) return;
+      syncMode();
+      say('', '');
       var value = email.value.trim();
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) {
-        msg.classList.add('is-error');
-        msg.textContent = 'Enter a full email address, like you@example.com.';
+        say('error', 'Enter a full email address, like you@example.com.');
         email.setAttribute('aria-invalid', 'true'); field.classList.add('is-invalid'); email.focus(); return;
       }
       email.removeAttribute('aria-invalid'); field.classList.remove('is-invalid');
       if (!consent.checked) {
-        msg.classList.add('is-error');
-        msg.textContent = 'Tick the box to agree to receive email about Qonvergence.';
+        say('error', 'Tick the box to agree to receive email about Qonvergence.');
         consent.focus(); return;
       }
-      msg.classList.add('is-mock');
-      msg.textContent = 'Preview only: the form passed its checks, but nothing was sent or stored. You are not on a waitlist.';
+      if (!live()) {
+        say('mock', 'Preview only: the form passed its checks, but nothing was sent or stored. You are not on a waitlist.');
+        return;
+      }
+      busy = true; submit.disabled = true; say('', 'Sending…');
+      fetch(live(), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: value, consent: true, website: website.value, source: 'site' })
+      }).then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (data) { return { status: res.status, data: data }; });
+      }).then(function (r) {
+        if (r.status === 200 && r.data.ok) {
+          say('ok', 'You’re on the list. We’ll email you when Qonvergence opens.');
+          form.reset();
+        } else if (r.status === 429) {
+          say('error', 'Too many tries from this connection. Wait an hour and try again.');
+        } else if (r.data.error === 'invalid_email') {
+          say('error', 'That email address didn’t go through. Check it and try again.');
+        } else if (r.data.error === 'consent_required') {
+          say('error', 'Tick the box to agree to receive email about Qonvergence.');
+        } else {
+          say('error', 'We couldn’t save your email. Try again in a moment.');
+        }
+      }).catch(function () {
+        say('error', 'We couldn’t reach the waitlist. Check your connection and try again.');
+      }).then(function () { busy = false; submit.disabled = false; });
     });
   }
 
