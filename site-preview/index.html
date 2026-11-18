@@ -66,89 +66,28 @@
 <!-- ============ HOME ============ -->
 <section class="view" data-view="home">
   <div class="hero">
-    <div class="hero-art" aria-hidden="true">
-      <svg id="base-scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" role="presentation">
-        <defs>
-          <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#020847"/><stop offset=".6" stop-color="#06128f"/><stop offset="1" stop-color="#1027e0"/></linearGradient>
-          <linearGradient id="g-ice" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8793ff"/><stop offset=".3" stop-color="#a9b3ff"/><stop offset="1" stop-color="#c9cfff"/></linearGradient>
-          <radialGradient id="g-halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#e2ecff"/><stop offset=".42" stop-color="#8fb0ff" stop-opacity=".85"/><stop offset=".8" stop-color="#2a4cff" stop-opacity=".45"/><stop offset="1" stop-color="#1027e0" stop-opacity="0"/></radialGradient>
-          <radialGradient id="g-orb" cx=".34" cy=".26" r=".85"><stop offset="0" stop-color="#d5dcff"/><stop offset=".3" stop-color="#7f8df8"/><stop offset="1" stop-color="#2a35c8"/></radialGradient>
-          <linearGradient id="f-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfe3ff"/><stop offset="1" stop-color="#aab3ff"/></linearGradient>
-          <linearGradient id="f-front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8f9bff"/><stop offset="1" stop-color="#6170f2"/></linearGradient>
-          <linearGradient id="f-side" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4553de"/><stop offset="1" stop-color="#2c38c4"/></linearGradient>
-          <filter id="soft" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="9"/></filter>
-          <filter id="far"><feGaussianBlur stdDeviation="2.2"/></filter>
-        </defs>
-        <rect width="1600" height="600" fill="url(#g-sky)"/>
-        <g id="stars" fill="#dfe4ff"></g>
-        <circle cx="1240" cy="500" r="290" fill="url(#g-halo)"/>
-        <circle cx="1240" cy="452" r="104" fill="url(#g-orb)"/>
-        <!-- low ice ridge on the horizon -->
-        <g filter="url(#far)" opacity=".85">
-          <polygon points="0,566 0,516 120,470 260,566" fill="#3443dc"/><polygon points="120,470 360,566 260,566" fill="#2230bc"/>
-          <polygon points="280,566 430,452 560,566" fill="#3c4be4"/><polygon points="430,452 700,566 560,566" fill="#2432c0"/>
-          <polygon points="1380,566 1500,488 1600,540 1600,566" fill="#3443dc"/>
-        </g>
-        <!-- ice shelf -->
-        <rect y="564" width="1600" height="336" fill="url(#g-ice)"/>
-        <rect y="562" width="1600" height="5" fill="#2b45ff" opacity=".75"/>
-        <!-- soft long shadows, as in the reference -->
-        <g filter="url(#soft)" fill="#1a24b4">
-          <ellipse cx="1030" cy="676" rx="330" ry="19" opacity=".8"/>
-          <ellipse cx="690" cy="650" rx="140" ry="10" opacity=".65"/>
-          <ellipse cx="1300" cy="660" rx="110" ry="10" opacity=".6"/>
-          <ellipse cx="360" cy="800" rx="260" ry="20" opacity=".4"/>
-          <ellipse cx="1500" cy="770" rx="200" ry="16" opacity=".35"/>
-        </g>
-        <!-- mast -->
-        <polygon points="842,646 850,350 858,646" fill="url(#f-front)"/><polygon points="850,350 855,350 864,646 858,646" fill="url(#f-side)"/>
-        <rect x="824" y="430" width="52" height="6" fill="#aab3ff"/><rect x="832" y="504" width="36" height="6" fill="#aab3ff"/>
-        <circle class="beacon" cx="852" cy="344" r="8" fill="#ffffff"/>
-        <!-- annex module -->
-        <polygon points="640,590 760,590 760,632 640,632" fill="url(#f-front)"/>
-        <polygon points="640,590 664,572 784,572 760,590" fill="url(#f-top)"/>
-        <polygon points="760,590 784,572 784,614 760,632" fill="url(#f-side)"/>
-        <g fill="#eef1ff"><rect x="656" y="603" width="18" height="10" rx="2"/><rect x="684" y="603" width="18" height="10" rx="2"/></g><rect x="712" y="603" width="18" height="10" rx="2" fill="#aab3ff"/>
-        <rect x="652" y="632" width="7" height="14" fill="#2c38c4"/><rect x="742" y="632" width="7" height="14" fill="#2c38c4"/>
-        <polygon points="784,598 900,586 900,602 784,614" fill="url(#f-side)"/>
-        <!-- main module on stilts -->
-        <polygon points="900,528 1140,528 1140,606 900,606" fill="url(#f-front)"/>
-        <polygon points="900,528 944,498 1184,498 1140,528" fill="url(#f-top)"/>
-        <polygon points="1140,528 1184,498 1184,576 1140,606" fill="url(#f-side)"/>
-        <g fill="#f4f6ff"><rect x="920" y="548" width="26" height="15" rx="3"/><rect x="956" y="548" width="26" height="15" rx="3"/><rect x="992" y="548" width="26" height="15" rx="3"/><rect x="1064" y="548" width="26" height="15" rx="3"/><rect x="1100" y="548" width="26" height="15" rx="3"/></g>
-        <rect x="1028" y="548" width="26" height="15" rx="3" fill="#aab3ff"/>
-        <g fill="#2c38c4"><rect x="914" y="606" width="9" height="46"/><rect x="1016" y="606" width="9" height="46"/><rect x="1118" y="606" width="9" height="46"/><rect x="1166" y="580" width="8" height="54"/></g>
-        <!-- upper deck + dish -->
-        <polygon points="960,498 1060,498 1060,468 960,468" fill="url(#f-front)"/>
-        <polygon points="960,468 980,454 1080,454 1060,468" fill="url(#f-top)"/>
-        <polygon points="1060,468 1080,454 1080,484 1060,498" fill="url(#f-side)"/>
-        <polygon points="1104,498 1112,460 1120,498" fill="url(#f-side)"/>
-        <polygon points="1086,436 1138,450 1118,474 1096,466" fill="url(#f-top)"/>
-        <!-- dome -->
-        <path d="M1232 646 A68 68 0 0 1 1368 646 Z" fill="url(#g-orb)"/>
-        <path d="M1232 646 A68 68 0 0 1 1300 578 A40 68 0 0 0 1268 646 Z" fill="#dfe3ff" opacity=".45"/>
-        <!-- storage cube -->
-        <polygon points="556,620 600,620 600,654 556,654" fill="url(#f-front)"/><polygon points="556,620 570,608 614,608 600,620" fill="url(#f-top)"/><polygon points="600,620 614,608 614,642 600,654" fill="url(#f-side)"/>
-      </svg>
-      <div class="hero-grain"></div>
-      <div class="hero-shade"></div>
-    </div>
-    <div class="hero-body wrap">
-      <p class="eyebrow">Qhantom · Antarctica base</p>
+    <div class="hero-top wrap">
+      <p class="eyebrow">Qhantom</p>
       <h1 class="display" tabindex="-1">Qonverging the human experience.</h1>
       <p class="lede">Qhantom brings storytelling, art, technology and research together to create new ways for people to connect, collaborate and explore.</p>
+    </div>
+    <picture class="hero-art" aria-hidden="true">
+      <source media="(max-width: 760px)" srcset="assets/home-stage-sm.webp">
+      <img src="assets/home-stage.webp" width="2412" height="1332" alt="">
+    </picture>
+    <div class="hero-ground wrap">
       <nav class="dest" aria-label="Destinations">
-        <p class="dest-head">Select destination</p>
         <a href="#qonvergence" data-nav><span class="dest-name">Qonvergence</span><span class="dest-what">The app, and the research beneath it</span><span class="tag t-dev">In development</span></a>
-        <a href="#realm-runners" data-nav><span class="dest-name">Realm Runners</span><span class="dest-what">The original universe: Qigana and Celestara</span><span class="tag t-live">Episode 0 released</span></a>
+        <a href="#realm-runners" data-nav><span class="dest-name">Realm Runners</span><span class="dest-what">The original universe</span><span class="tag t-live">Episode 0 released</span></a>
         <a href="#sonics" data-nav><span class="dest-name">Sonics</span><span class="dest-what">Music from the worlds of Qhantom</span><span class="tag t-live">Vol 1 out</span></a>
         <a href="#shop" data-nav><span class="dest-name">Shop</span><span class="dest-what">Fabric and physical product</span><span class="tag t-soon">Coming soon</span></a>
       </nav>
     </div>
+    <div class="hero-grain" aria-hidden="true"></div>
   </div>
 
   <div class="wrap stack">
-    <p class="note" data-note>Hero art is a code-drawn placeholder. No Antarctica base artwork exists on the live site or in the Website Assets folder yet.</p>
+    <p class="note" data-note>The hero is your aesthetic-reference-01 image used directly, upscaled from 1206px. A higher-resolution render would sharpen it. It shows the reference scene, not an Antarctica base, because no base artwork exists yet.</p>
 
     <section class="block">
       <p class="eyebrow">How it fits together</p>
