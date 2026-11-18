@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Qhantom Console Preview</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#03041a">
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Michroma&family=Space+Grotesk:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--BODY-->
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- realm skies: fixed layers behind the console, cross-faded by body[data-realm] -->
+<div class="sky" aria-hidden="true">
+  <div class="sky-layer sky-qigana"><i></i><i></i><i></i></div>
+  <div class="sky-layer sky-celestara"><i></i><i></i><i></i></div>
+  <div class="sky-grain"></div>
+</div>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#home" data-nav>
+      <img src="assets/logo-96.webp" width="96" height="91" alt="">
+      <span>Qhantom</span>
+    </a>
+    <nav class="nav-primary" aria-label="Primary">
+      <a href="#qonvergence" data-nav>Qonvergence</a>
+      <a href="#realm-runners" data-nav>Realm Runners</a>
+      <a href="#sonics" data-nav>Sonics</a>
+      <a href="#shop" data-nav>Shop</a>
+    </nav>
+    <nav class="nav-secondary" aria-label="Company">
+      <a href="#about" data-nav>About</a>
+      <a href="#careers" data-nav>Careers</a>
+      <a href="#community" data-nav>Community</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-panel">Menu</button>
+  </div>
+  <nav class="menu-panel" id="menu-panel" aria-label="All destinations" hidden>
+    <a href="#home" data-nav>Home</a>
+    <a href="#qonvergence" data-nav>Qonvergence</a>
+    <a href="#realm-runners" data-nav>Realm Runners</a>
+    <a href="#sonics" data-nav>Sonics</a>
+    <a href="#shop" data-nav>Shop</a>
+    <a href="#about" data-nav>About</a>
+    <a href="#careers" data-nav>Careers</a>
+    <a href="#community" data-nav>Community</a>
+    <a href="#waitlist" data-nav>Qonvergence Waitlist</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ============ HOME ============ -->
+<section class="view" data-view="home">
+  <div class="hero">
+    <div class="hero-art" aria-hidden="true">
+      <svg id="base-scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" role="presentation">
+        <defs>
+          <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#02031a"/><stop offset=".55" stop-color="#0a0f5e"/><stop offset="1" stop-color="#2c36dc"/>
+          </linearGradient>
+          <linearGradient id="g-ice" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#7f8cff"/><stop offset=".35" stop-color="#aab4ff"/><stop offset="1" stop-color="#d6dbff"/>
+          </linearGradient>
+          <radialGradient id="g-halo" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#cfe0ff" stop-opacity=".95"/><stop offset=".45" stop-color="#6f86ff" stop-opacity=".55"/><stop offset="1" stop-color="#2c36dc" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="g-orb" cx=".38" cy=".3" r=".8">
+            <stop offset="0" stop-color="#c3ccff"/><stop offset=".5" stop-color="#5a66f2"/><stop offset="1" stop-color="#1a1fa8"/>
+          </radialGradient>
+        </defs>
+        <rect width="1600" height="600" fill="url(#g-sky)"/>
+        <g id="stars" fill="#dfe4ff"></g>
+        <circle cx="1235" cy="470" r="230" fill="url(#g-halo)"/>
+        <circle cx="1235" cy="470" r="92" fill="url(#g-orb)"/>
+        <!-- far range: light face / shadow face per peak -->
+        <g>
+          <polygon points="0,570 0,500 90,430 170,570" fill="#3d49e6"/><polygon points="90,430 250,570 170,570" fill="#1b22a6"/>
+          <polygon points="200,570 330,395 420,570" fill="#4a56ee"/><polygon points="330,395 520,570 420,570" fill="#1e259f"/>
+          <polygon points="470,570 560,470 620,570" fill="#3d49e6"/><polygon points="560,470 700,570 620,570" fill="#1b22a6"/>
+          <polygon points="1330,570 1450,440 1520,570" fill="#4a56ee"/><polygon points="1450,440 1600,540 1600,570 1520,570" fill="#1e259f"/>
+          <polygon points="330,395 352,440 318,452 300,436" fill="#c9d0ff"/><polygon points="1450,440 1470,478 1436,484" fill="#c9d0ff"/>
+        </g>
+        <!-- ice shelf -->
+        <rect y="566" width="1600" height="334" fill="url(#g-ice)"/>
+        <polygon points="0,566 420,566 250,640 0,660" fill="#8f9bff" opacity=".7"/>
+        <polygon points="1100,566 1600,566 1600,650 1380,610" fill="#929eff" opacity=".6"/>
+        <polygon points="0,760 380,700 760,790 520,900 0,900" fill="#e4e8ff" opacity=".55"/>
+        <polygon points="900,760 1600,700 1600,900 1040,900" fill="#bfc7ff" opacity=".6"/>
+        <!-- long shadows -->
+        <ellipse cx="1040" cy="668" rx="290" ry="20" fill="#141a8c" opacity=".55"/>
+        <ellipse cx="690" cy="640" rx="120" ry="11" fill="#141a8c" opacity=".45"/>
+        <ellipse cx="400" cy="800" rx="210" ry="18" fill="#1a209a" opacity=".3"/>
+        <!-- mast -->
+        <polygon points="842,640 850,360 858,640" fill="#2026b4"/>
+        <polygon points="850,360 854,360 862,640 858,640" fill="#0f1470"/>
+        <rect x="826" y="430" width="48" height="5" fill="#2a31c4"/><rect x="832" y="500" width="36" height="5" fill="#2a31c4"/>
+        <circle class="beacon" cx="852" cy="354" r="7" fill="#eef1ff"/>
+        <!-- annex module -->
+        <polygon points="640,588 760,588 760,628 640,628" fill="#4c58ee"/>
+        <polygon points="640,588 664,572 784,572 760,588" fill="#b4bdff"/>
+        <polygon points="760,588 784,572 784,612 760,628" fill="#232ab8"/>
+        <rect x="656" y="600" width="18" height="10" fill="#e8ecff"/><rect x="684" y="600" width="18" height="10" fill="#e8ecff"/><rect x="712" y="600" width="18" height="10" fill="#9aa6ff"/>
+        <rect x="652" y="628" width="6" height="14" fill="#141a8c"/><rect x="742" y="628" width="6" height="14" fill="#141a8c"/>
+        <!-- connector -->
+        <polygon points="784,596 900,584 900,600 784,612" fill="#343ed6"/>
+        <!-- main module on stilts -->
+        <polygon points="900,528 1140,528 1140,604 900,604" fill="#5561f2"/>
+        <polygon points="900,528 944,500 1184,500 1140,528" fill="#c3cbff"/>
+        <polygon points="1140,528 1184,500 1184,576 1140,604" fill="#262dbe"/>
+        <g fill="#eef1ff"><rect x="920" y="548" width="26" height="14"/><rect x="956" y="548" width="26" height="14"/><rect x="992" y="548" width="26" height="14"/><rect x="1064" y="548" width="26" height="14"/><rect x="1100" y="548" width="26" height="14"/></g>
+        <rect x="1028" y="548" width="26" height="14" fill="#8e9bff"/>
+        <rect x="900" y="578" width="240" height="4" fill="#3640d8"/>
+        <g fill="#141a8c"><rect x="914" y="604" width="8" height="44"/><rect x="1016" y="604" width="8" height="44"/><rect x="1118" y="604" width="8" height="44"/><rect x="1166" y="578" width="7" height="52"/></g>
+        <!-- upper deck + dish -->
+        <polygon points="960,500 1060,500 1060,470 960,470" fill="#4753ea"/>
+        <polygon points="960,470 980,458 1080,458 1060,470" fill="#b4bdff"/>
+        <polygon points="1060,470 1080,458 1080,488 1060,500" fill="#232ab8"/>
+        <polygon points="1104,500 1112,462 1120,500" fill="#2026b4"/>
+        <polygon points="1086,440 1136,452 1118,474 1096,468" fill="#dfe4ff"/><polygon points="1096,468 1118,474 1108,480" fill="#7f8cff"/>
+        <!-- geodesic dome -->
+        <g>
+          <polygon points="1230,640 1246,592 1290,566 1290,640" fill="#8f9bff"/>
+          <polygon points="1246,592 1290,566 1268,560" fill="#dfe4ff"/>
+          <polygon points="1290,566 1334,592 1350,640 1290,640" fill="#3a45de"/>
+          <polygon points="1290,566 1312,560 1334,592" fill="#6672f6"/>
+          <polygon points="1268,560 1290,566 1312,560 1290,552" fill="#eef1ff"/>
+          <polygon points="1230,640 1246,592 1262,640" fill="#b4bdff"/>
+          <polygon points="1334,592 1350,640 1318,640" fill="#232ab8"/>
+        </g>
+        <!-- fuel/storage cubes -->
+        <polygon points="560,618 600,618 600,650 560,650" fill="#4c58ee"/><polygon points="560,618 572,608 612,608 600,618" fill="#b4bdff"/><polygon points="600,618 612,608 612,640 600,650" fill="#232ab8"/>
+        <!-- near drift -->
+        <polygon points="0,900 0,838 300,862 620,900" fill="#f1f3ff" opacity=".8"/>
+      </svg>
+      <div class="hero-shade"></div>
+    </div>
+    <div class="hero-body wrap">
+      <p class="eyebrow">Qhantom · Antarctica base</p>
+      <h1 class="display" tabindex="-1">Qonverging the human experience.</h1>
+      <p class="lede">Qhantom brings storytelling, art, technology and research together to create new ways for people to connect, collaborate and explore.</p>
+      <nav class="dest" aria-label="Destinations">
+        <p class="dest-head">Select destination</p>
+        <a href="#qonvergence" data-nav><span class="dest-name">Qonvergence</span><span class="dest-what">The app, and the research beneath it</span><span class="tag t-dev">In development</span></a>
+        <a href="#realm-runners" data-nav><span class="dest-name">Realm Runners</span><span class="dest-what">The original universe: Qigana and Celestara</span><span class="tag t-live">Episode 0 released</span></a>
+        <a href="#sonics" data-nav><span class="dest-name">Sonics</span><span class="dest-what">Music from the worlds of Qhantom</span><span class="tag t-live">Vol 1 out</span></a>
+        <a href="#shop" data-nav><span class="dest-name">Shop</span><span class="dest-what">Fabric and physical product</span><span class="tag t-soon">Coming soon</span></a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrap stack">
+    <p class="note" data-note>Hero art is a code-drawn placeholder. No Antarctica base artwork exists on the live site or in the Website Assets folder yet.</p>
+
+    <section class="block">
+      <p class="eyebrow">How it fits together</p>
+      <h2>One company, one app, one universe.</h2>
+      <dl class="chain">
+        <div><dt>Qhantom</dt><dd>The company. Storytelling, art, technology and research.</dd></div>
+        <div><dt>Qonvergence <span class="tag t-dev">In development</span></dt><dd>Our app, with research beneath it. Its first planned experience invites you into Realm Runners.</dd></div>
+        <div><dt>Realm Runners <span class="tag t-live">Episode 0 released</span></dt><dd>The original universe. Its stories, lore and music already exist outside the app; an interactive experience is planned inside Qonvergence.</dd></div>
+      </dl>
+    </section>
+
+    <section class="block">
+      <p class="eyebrow">Preview</p>
+      <div class="previews">
+        <a class="pv" href="#qonvergence" data-nav>
+          <div class="pv-art pv-logo"><img src="assets/logo.webp" width="512" height="485" alt="" loading="lazy"></div>
+          <h3>Qonvergence</h3>
+          <p>Qonvergence brings people, ideas and worlds together.</p>
+          <span class="go">Open Qonvergence</span>
+        </a>
+        <a class="pv" href="#realm-runners" data-nav>
+          <div class="pv-art pv-globes"><img src="assets/qigana-globe.webp" width="1100" height="819" alt="" loading="lazy"><img src="assets/celestara-globe.webp" width="1100" height="737" alt="" loading="lazy"></div>
+          <h3>Realm Runners</h3>
+          <p>Travelers who cross the realms. Choose Qigana or Celestara.</p>
+          <span class="go">Open Realm Runners</span>
+        </a>
+        <a class="pv" href="#sonics" data-nav>
+          <div class="pv-art pv-covers"><img src="assets/sonics/blue-steam-backpack.webp" width="300" height="300" alt="" loading="lazy"><img src="assets/sonics/nikofftime-aphorism.webp" width="300" height="300" alt="" loading="lazy"><img src="assets/sonics/heloise-girl-in-between.webp" width="300" height="300" alt="" loading="lazy"></div>
+          <h3>Sonics</h3>
+          <p>Scores, artists and atmosphere across the realms.</p>
+          <span class="go">Open Sonics</span>
+        </a>
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- ============ QONVERGENCE ============ -->
+<section class="view" data-view="qonvergence" hidden>
+  <div class="wrap stack">
+    <header class="head">
+      <p class="eyebrow">App <span class="tag t-dev">In development</span></p>
+      <h1 class="display" tabindex="-1">Qonvergence</h1>
+      <p class="lede">Qonvergence brings people, ideas and worlds together. Our first planned experience invites you into Realm Runners: create your character, explore its stories and take part in missions.</p>
+      <p><a class="btn" href="#waitlist" data-nav>Join the Qonvergence Waitlist</a></p>
+      <p class="note" data-note>Headline is still open, so the brand name stands in. The current live page (“Give your ideas somewhere to go”, Sky, Stream, Studios, Qon Town) is not carried over here; tell me which parts should return.</p>
+    </header>
+
+    <section class="block">
+      <p class="eyebrow">First planned experience</p>
+      <h2>Realm Runners, inside Qonvergence</h2>
+      <ul class="planned">
+        <li><span class="tag t-plan">Planned</span><strong>Create your character</strong></li>
+        <li><span class="tag t-plan">Planned</span><strong>Explore its stories</strong></li>
+        <li><span class="tag t-plan">Planned</span><strong>Take part in missions</strong></li>
+      </ul>
+      <p class="fine">These are plans, not released features. No dates, prices or membership benefits have been announced.</p>
+      <p><a class="link" href="#realm-runners" data-nav>See the Realm Runners universe</a></p>
+    </section>
+
+    <section class="block research">
+      <p class="eyebrow">Research <span class="tag t-res">Exploratory</span></p>
+      <h2>Qonvergence • Worlds</h2>
+      <p>Early research toward persistent worlds. This is ongoing research within Qonvergence. It is not a released product, and nothing here is publicly available yet.</p>
+    </section>
+  </div>
+</section>
+
+<!-- ============ WAITLIST ============ -->
+<section class="view" data-view="waitlist" hidden>
+  <div class="wrap stack narrow">
+    <header class="head">
+      <p class="eyebrow">Qonvergence <span class="tag t-dev">In development</span></p>
+      <h1 class="display" tabindex="-1">Qonvergence Waitlist</h1>
+      <p class="lede">Leave your email and we will write when Qonvergence opens.</p>
+    </header>
+    <div class="mock" role="note">
+      <strong>Mock form. Not connected.</strong>
+      <span>This preview does not send or store anything. No signup backend has been chosen or tested yet.</span>
+    </div>
+    <form class="form" id="waitlist-form" novalidate>
+      <label for="wl-email">Email address</label>
+      <input id="wl-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="wl-msg">
+      <label class="check" for="wl-consent"><input id="wl-consent" name="consent" type="checkbox" required><span>I agree to receive email from Qhantom about Qonvergence.</span></label>
+      <button class="btn" type="submit">Join the waitlist</button>
+      <p class="form-msg" id="wl-msg" role="status" aria-live="polite"></p>
+      <p class="fine">Draft privacy wording, not approved: We use your email only to send Qonvergence updates. You can ask us to remove it at any time by writing to <span class="addr">hello@qhantom.com</span>.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ REALM RUNNERS ============ -->
+<section class="view" data-view="realm-runners" hidden>
+  <div class="wrap stack">
+    <header class="head center">
+      <p class="eyebrow">Stories across worlds</p>
+      <h1 class="display" tabindex="-1">Realm Runners</h1>
+      <p class="lede">The Realm Runners are travelers who cross the realms. On Earth, their missions arrive as a broadcast produced by Qhantom.</p>
+    </header>
+
+    <div class="globes">
+      <a class="globe" href="#qigana" data-realm-link="qigana">
+        <img src="assets/qigana-globe.webp" width="1100" height="819" alt="Qigana: a city of crystal spires and curved halls under an aurora, inside a glass dome">
+        <span class="globe-name">Qigana</span>
+        <span class="go">Enter realm</span>
+      </a>
+      <a class="globe" href="#celestara" data-realm-link="celestara">
+        <img src="assets/celestara-globe.webp" width="1100" height="737" alt="Celestara: a cream palace with gold domes and red banners among snowy peaks under a golden sky, inside a glass dome">
+        <span class="globe-name">Celestara</span>
+        <span class="go">Enter realm</span>
+      </a>
+    </div>
+
+    <section class="block">
+      <div class="rows">
+        <a class="row" href="https://www.youtube.com/@RealmRunnersTV" target="_blank" rel="noopener"><span class="tag t-live">Released</span><span class="row-main"><strong>Episode 0</strong><span>Watch on Realm Runners TV</span></span><span class="ext">YouTube ↗</span></a>
+        <a class="row" href="#archive" data-nav><span class="tag t-live">Open</span><span class="row-main"><strong>Archive</strong><span>Ancient stories from the past</span></span><span class="ext">Enter →</span></a>
+        <a class="row" href="#sonics" data-nav><span class="tag t-live">Vol 1 out</span><span class="row-main"><strong>Soundtrack</strong><span>The music lives in Sonics</span></span><span class="ext">Sonics →</span></a>
+        <div class="row is-static"><span class="tag t-soon">Coming soon</span><span class="row-main"><strong>Recruits</strong><span>A new part of Realm Runners</span></span></div>
+        <a class="row" href="#qonvergence" data-nav><span class="tag t-plan">Planned</span><span class="row-main"><strong>Interactive experience</strong><span>Planned inside Qonvergence</span></span><span class="ext">Qonvergence →</span></a>
+      </div>
+      <p class="note" data-note>Recruits is live today as a “coming soon” page. Where Recruits and factions belong (site or app) is still open, so it is listed here without a page.</p>
+    </section>
+  </div>
+</section>
+
+<!-- ============ QIGANA ============ -->
+<section class="view realm" data-view="qigana" data-realm="qigana" hidden>
+  <div class="wrap stack">
+    <a class="back" href="#realm-runners" data-nav>← Realm Runners</a>
+    <div class="realm-grid">
+      <img class="realm-globe" src="assets/qigana-globe.webp" width="1100" height="819" alt="Qigana under its aurora, inside a glass dome">
+      <div class="panel">
+        <p class="eyebrow">Realm</p>
+        <h1 class="display" tabindex="-1">Qigana</h1>
+        <p class="lede">The futuristic home realm of Qhantom: the place the team returns to, where memory, belonging, rest, and daily life gather beneath a city built for the future.</p>
+        <p><a class="link" href="https://www.youtube.com/@RealmRunnersTV" target="_blank" rel="noopener">Watch Episode 0 on Realm Runners TV ↗</a></p>
+        <p><a class="link" href="#celestara" data-realm-link="celestara">Cross to Celestara →</a></p>
+      </div>
+    </div>
+    <figure class="still"><img src="assets/poster-qigana.webp" width="960" height="540" alt="A still from the Realm Runners broadcast set in Qigana" loading="lazy"><figcaption>From the broadcast</figcaption></figure>
+    <p class="note" data-note>Sky is drawn in CSS from the globe’s aurora. Characters, lore and stories for this page are not written yet, so none are shown.</p>
+  </div>
+</section>
+
+<!-- ============ CELESTARA ============ -->
+<section class="view realm" data-view="celestara" data-realm="celestara" hidden>
+  <div class="wrap stack">
+    <a class="back" href="#realm-runners" data-nav>← Realm Runners</a>
+    <div class="realm-grid">
+      <img class="realm-globe" src="assets/celestara-globe.webp" width="1100" height="737" alt="Celestara’s palace and viaduct under a golden sky, inside a glass dome">
+      <div class="panel">
+        <p class="eyebrow">Realm</p>
+        <h1 class="display" tabindex="-1">Celestara</h1>
+        <p class="lede">A peaceful realm of beauty: luminous, still, and restorative, shaped by grace, calm, and the quiet reward of crossing through trial.</p>
+        <p><a class="link" href="https://www.youtube.com/@RealmRunnersTV" target="_blank" rel="noopener">Watch Episode 0 on Realm Runners TV ↗</a></p>
+        <p><a class="link" href="#qigana" data-realm-link="qigana">Cross to Qigana →</a></p>
+      </div>
+    </div>
+    <figure class="still"><img src="assets/poster-celestara.webp" width="960" height="540" alt="A still from the Realm Runners broadcast set in Celestara" loading="lazy"><figcaption>From the broadcast</figcaption></figure>
+    <p class="note" data-note>Sky is drawn in CSS from the globe’s golden palette. A clean sky crop would replace it.</p>
+  </div>
+</section>
+
+<!-- ============ ARCHIVE ============ -->
+<section class="view" data-view="archive" hidden>
+  <div class="wrap stack">
+    <a class="back" href="#realm-runners" data-nav>← Realm Runners</a>
+    <header class="head">
+      <p class="eyebrow">Realm Runners · Ancient stories</p>
+      <h1 class="display" tabindex="-1">Archive</h1>
+      <p class="lede">Ancient stories from the past.</p>
+      <p><a class="btn ghost" href="https://www.youtube.com/@realmrunnersarchive" target="_blank" rel="noopener">Realm Runners Archive on YouTube ↗</a></p>
+    </header>
+    <div class="frescoes">
+      <img src="assets/archive/section-realm-runners-fresco.webp" width="640" height="360" alt="Realm Runners fresco" loading="lazy">
+      <img src="assets/archive/hero-qigana-council-fresco.webp" width="640" height="360" alt="Qigana council fresco" loading="lazy">
+      <img src="assets/archive/section-research-fresco.webp" width="640" height="360" alt="Research fresco" loading="lazy">
+      <img src="assets/archive/section-simulation-fresco.webp" width="640" height="360" alt="Simulation fresco" loading="lazy">
+      <img src="assets/archive/section-sonics-fresco.webp" width="640" height="360" alt="Sonics fresco" loading="lazy">
+      <img src="assets/archive/section-technologies-fresco.webp" width="640" height="360" alt="Technologies fresco" loading="lazy">
+      <img src="assets/archive/section-community-fresco.webp" width="640" height="360" alt="Community fresco" loading="lazy">
+    </div>
+    <p class="note" data-note>The live Archive shows these seven frescoes, not videos. I need the list of ancient lore videos (titles and links) to lay them out here.</p>
+  </div>
+</section>
+
+<!-- ============ SONICS ============ -->
+<section class="view" data-view="sonics" hidden>
+  <div class="wrap stack">
+    <header class="head">
+      <p class="eyebrow">Qhantom Audio Lab <span class="tag t-live">Vol 1 out</span></p>
+      <h1 class="display" tabindex="-1">Sonics</h1>
+      <p class="lede">Music from the worlds of Qhantom: scores, artists, and atmosphere across the realms.</p>
+      <p><a class="btn" href="https://open.spotify.com/album/2v8GyyE06KnFHfnLi2W4qx" target="_blank" rel="noopener">Listen to Qhantom Vol 1 on Spotify ↗</a></p>
+    </header>
+
+    <section class="block">
+      <p class="eyebrow">Qonstellation</p>
+      <h2>Tracks from the Qhantom universe</h2>
+      <ol class="tracks">
+        <li><strong>Ekhos of Celestara</strong><span>The Blue Steam Project</span></li>
+        <li><strong>qPerfect World Interlude</strong><span>The Blue Steam Project and Zayve</span></li>
+        <li><strong>Right Here (Sun and Moon)</strong><span>The Blue Steam Project</span></li>
+        <li><strong>genesis.qhantom</strong><span>Nikofftime</span></li>
+        <li><strong>Dead Channel Transmission</strong><span>Nikofftime</span></li>
+      </ol>
+      <p>Every world and realm has its own sound, culture, identity, emotional texture and musical language. Sonics builds that world, capturing the atmosphere of every place the broadcast visits. Realm Runners soundtracks live here too.</p>
+    </section>
+
+    <section class="block">
+      <p class="eyebrow">Spotlights</p>
+      <h2>Featured artists from across the audio lab</h2>
+      <div class="spots">
+        <a class="spot" href="https://open.spotify.com/track/5gvNbKJj76lGm1Gx95w7d0" target="_blank" rel="noopener"><img src="assets/sonics/blue-steam-backpack.webp" width="300" height="300" alt="" loading="lazy"><strong>The Blue Steam Project</strong><span>Backpack ↗</span></a>
+        <a class="spot" href="https://open.spotify.com/track/2FbnFAQrOylgGAy7hge952" target="_blank" rel="noopener"><img src="assets/sonics/gokmyn-molly-santana.webp" width="300" height="300" alt="" loading="lazy"><strong>GoKmyn</strong><span>Molly Santana ↗</span></a>
+        <a class="spot" href="https://open.spotify.com/track/2W7thIwQaTHmXRADgvG56F" target="_blank" rel="noopener"><img src="assets/sonics/heloise-girl-in-between.webp" width="300" height="300" alt="" loading="lazy"><strong>Héloïse</strong><span>The Girl in Between ↗</span></a>
+        <div class="spot"><img src="assets/sonics/nikofftime-aphorism.webp" width="300" height="300" alt="" loading="lazy"><strong>Nikofftime</strong><span>Aphorism</span></div>
+        <a class="spot" href="https://open.spotify.com/track/7fj9ITAvNH9uwQmJP7CwUC" target="_blank" rel="noopener"><img src="assets/sonics/queue-2sday.webp" width="300" height="300" alt="" loading="lazy"><strong>Queue</strong><span>2sDAY ↗</span></a>
+        <div class="spot"><img src="assets/sonics/zayve-sleeping-in-silence.webp" width="300" height="225" alt="" loading="lazy"><strong>Zayve</strong><span>Sleeping in Silence</span></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <p class="eyebrow">Contributors</p>
+      <dl class="credits">
+        <div><dt>Nikofftime</dt><dd>composer / sound designer</dd></div>
+        <div><dt>The Blue Steam Project</dt><dd>artist / producer</dd></div>
+        <div><dt>GoKmyn</dt><dd>artist</dd></div>
+        <div><dt>Héloïse</dt><dd>artist</dd></div>
+        <div><dt>Au$</dt><dd>artist</dd></div>
+        <div><dt>$pazz</dt><dd>artist</dd></div>
+        <div><dt>Zayve</dt><dd>artist / sound engineer</dd></div>
+        <div><dt>Queue</dt><dd>producer</dd></div>
+      </dl>
+    </section>
+    <p class="note" data-note>Copy, tracks, links and credits are taken from the live Sonics page. The live orb player and audio previews are not rebuilt in this preview.</p>
+  </div>
+</section>
+
+<!-- ============ SHOP ============ -->
+<section class="view" data-view="shop" hidden>
+  <div class="wrap stack narrow">
+    <header class="head">
+      <p class="eyebrow">Shop <span class="tag t-soon">Coming soon</span></p>
+      <h1 class="display" tabindex="-1">Shop</h1>
+      <p class="lede">The Qhantom universe expressed in fabric and physical product.</p>
+      <p class="fine">Nothing is on sale yet.</p>
+    </header>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="view" data-view="about" hidden>
+  <div class="wrap stack">
+    <header class="head">
+      <p class="eyebrow">Company</p>
+      <h1 class="display" tabindex="-1">About Qhantom</h1>
+      <p class="lede">Qhantom (Phan-tom) makes the future feel inhabitable: trusted technology, broadcast worlds, and sound, so people keep meaning, agency, and home inside intelligent systems.</p>
+    </header>
+    <section class="block">
+      <p>Qhantom is organized around a single question: how do humans find meaning, agency, continuity, connection, and home inside increasingly vast intelligent systems?</p>
+      <dl class="chain">
+        <div><dt>Qonvergence <span class="tag t-dev">In development</span></dt><dd>(Con-ver-gence) Brings people, ideas and worlds together. Research continues beneath it.</dd></div>
+        <div><dt>Realm Runners</dt><dd>Follows travelers and their missions across the realms, with their stories produced for Earth by Qhantom.</dd></div>
+        <div><dt>Sonics</dt><dd>Brings together music, artists, and sound from those worlds.</dd></div>
+      </dl>
+      <p>Different doors, one Qhantom.</p>
+      <p class="note" data-note>Live copy, except the Qonvergence line, which I shortened to match the new direction. The live line describes a place for people and AI agents to find collaborators.</p>
+    </section>
+    <section class="block award">
+      <img src="assets/deep-tech-pioneers.webp" width="320" height="320" alt="Hello Tomorrow Deep Tech Pioneers" loading="lazy">
+      <div><p class="eyebrow">Award</p><h2>Hello Tomorrow</h2><p>Selected as a Deep Tech Pioneer.</p></div>
+    </section>
+    <section class="block">
+      <p class="eyebrow">Contact</p>
+      <dl class="contacts">
+        <div><dt>General</dt><dd><span class="addr">hello@qhantom.com</span> <button class="copy" type="button" data-copy="hello@qhantom.com">Copy</button></dd></div>
+        <div><dt>Press</dt><dd><span class="addr">press@qhantom.com</span> <button class="copy" type="button" data-copy="press@qhantom.com">Copy</button></dd></div>
+      </dl>
+    </section>
+  </div>
+</section>
+
+<!-- ============ CAREERS ============ -->
+<section class="view" data-view="careers" hidden>
+  <div class="wrap stack">
+    <header class="head">
+      <p class="eyebrow">Company</p>
+      <h1 class="display" tabindex="-1">Careers</h1>
+      <p class="lede">Qhantom is building an alternate path for the AI era: cinematic worlds, creative tools, and technology that still feels human.</p>
+      <p>We are looking for engineers, artists, writers, and builders who want to help turn that world into something real.</p>
+    </header>
+    <section class="block">
+      <p class="eyebrow">Open roles</p>
+      <p>These are early signals for the kinds of people Qhantom needs. Some roles may become founding paths; others may begin as project-based collaborations. Every role is open to interns.</p>
+      <div class="roles">
+        <div><h3>Technology</h3>
+          <a href="https://qhantom.com/company/careers/full-stack-engineer/" target="_blank" rel="noopener">Full Stack Engineer ↗</a>
+          <a href="https://qhantom.com/company/careers/agentic-engineer/" target="_blank" rel="noopener">Agentic Engineer ↗</a>
+          <a href="https://qhantom.com/company/careers/creative-technologist/" target="_blank" rel="noopener">Creative Technologist ↗</a>
+        </div>
+        <div><h3>Creative</h3>
+          <a href="https://qhantom.com/company/careers/animation-developer/" target="_blank" rel="noopener">Animation Developer ↗</a>
+          <a href="https://qhantom.com/company/careers/cinematic-editor/" target="_blank" rel="noopener">Cinematic Editor ↗</a>
+          <a href="https://qhantom.com/company/careers/story-script-writer/" target="_blank" rel="noopener">Story &amp; Script Writer ↗</a>
+          <a href="https://qhantom.com/company/careers/marketing-community/" target="_blank" rel="noopener">Marketing &amp; Community ↗</a>
+        </div>
+      </div>
+      <p class="note" data-note>Role links open the current live role pages. Those seven pages would be carried over as they are.</p>
+    </section>
+    <section class="block">
+      <p class="eyebrow">How to apply</p>
+      <p>Email <span class="addr">careers@qhantom.com</span> <button class="copy" type="button" data-copy="careers@qhantom.com">Copy</button> with:</p>
+      <ul class="plain">
+        <li>The role and a short introduction</li>
+        <li>A portfolio, reel, GitHub, or other work</li>
+        <li>Why you want to help build Qhantom</li>
+      </ul>
+      <p>Curiosity, taste, and genuine interest matter more here than traditional credentials. If you believe you should be building with us, send your work anyway.</p>
+    </section>
+  </div>
+</section>
+
+<!-- ============ COMMUNITY ============ -->
+<section class="view" data-view="community" hidden>
+  <div class="wrap stack">
+    <header class="head">
+      <p class="eyebrow">Qhantom Community · Early settlement</p>
+      <h1 class="display" tabindex="-1">Community</h1>
+      <p class="lede">The gathering place for people following, building, playing, and helping shape Qhantom.</p>
+    </header>
+    <section class="block">
+      <div class="rows">
+        <a class="row" href="https://discord.gg/2Z2fCs3jAk" target="_blank" rel="noopener"><span class="tag t-live">Live</span><span class="row-main"><strong>Discord</strong><span>Updates, conversation, and the first circle of people helping shape the world</span></span><span class="ext">Discord ↗</span></a>
+        <a class="row" href="https://qhantom.com/quo-vadis/" target="_blank" rel="noopener"><span class="tag t-live">Open call</span><span class="row-main"><strong>Quo Vadis?</strong><span>Future World Art Contest. Submissions run through the Discord.</span></span><span class="ext">Open call ↗</span></a>
+        <div class="row is-static"><span class="tag t-soon">In formation</span><span class="row-main"><strong>Member Games</strong><span>Lightweight games, rituals, and Discord-connected experiments</span></span></div>
+        <div class="row is-static"><span class="tag t-soon">Open path</span><span class="row-main"><strong>Contributors</strong><span>For people who want to help test, write, organize, build tools, make art, or support the world as it forms</span></span></div>
+      </div>
+    </section>
+    <section class="block">
+      <p class="eyebrow">Channels</p>
+      <ul class="channels">
+        <li><a href="https://x.com/qhantomlabs" target="_blank" rel="noopener">X · @qhantomlabs</a></li>
+        <li><a href="https://x.com/arkqhantom" target="_blank" rel="noopener">X · @arkqhantom</a></li>
+        <li><a href="https://www.youtube.com/@RealmRunnersTV" target="_blank" rel="noopener">YouTube · Realm Runners TV</a></li>
+        <li><a href="https://www.youtube.com/@realmrunnersarchive" target="_blank" rel="noopener">YouTube · Realm Runners Archive</a></li>
+        <li><a href="https://youtube.com/@qhantomcorporation" target="_blank" rel="noopener">YouTube · Realm Runners Music</a></li>
+        <li><a href="https://www.youtube.com/@qhantomresearch" target="_blank" rel="noopener">YouTube · Qhantom Research</a></li>
+        <li><a href="https://www.instagram.com/qhantomcorporation" target="_blank" rel="noopener">Instagram · @qhantomcorporation</a></li>
+        <li><a href="https://www.instagram.com/realm_runners_tv" target="_blank" rel="noopener">Instagram · @realm_runners_tv</a></li>
+        <li><a href="https://www.instagram.com/qhantomlabs" target="_blank" rel="noopener">Instagram · Qhantom Labs</a></li>
+        <li><a href="https://open.spotify.com/album/2v8GyyE06KnFHfnLi2W4qx" target="_blank" rel="noopener">Spotify · Qhantom Vol 1</a></li>
+        <li><a href="https://github.com/Qhantom-Labs" target="_blank" rel="noopener">GitHub · Qhantom Labs</a></li>
+      </ul>
+      <p class="note" data-note>Channel links follow links.qhantom.com, which was updated most recently. The live site footer still points to a different Discord invite, @qhantomcorp on X, @QhantomLab on YouTube and Qhantom-Research on GitHub. Please confirm which set is current.</p>
+    </section>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <nav aria-label="Footer">
+      <a href="#about" data-nav>About</a>
+      <a href="#careers" data-nav>Careers</a>
+      <a href="#community" data-nav>Community</a>
+      <a href="#waitlist" data-nav>Qonvergence Waitlist</a>
+    </nav>
+    <p class="foot-contact"><span class="addr">hello@qhantom.com</span></p>
+    <p class="foot-copy">© 2026 Qhantom</p>
+  </div>
+  <div class="draft">
+    <div class="wrap draft-in">
+      <span>Draft preview · working copy · not published</span>
+      <button type="button" id="notes-btn" aria-pressed="true">Hide review notes</button>
+    </div>
+  </div>
+</footer>
+<!--/BODY-->
+<script src="app.js"></script>
+</body>
+</html>
