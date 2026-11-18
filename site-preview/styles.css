@@ -79,7 +79,7 @@ h1:focus { outline: none; }
   background: linear-gradient(180deg, #ffffff 0%, #e3e7ff 45%, #a9b4ff 100%);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 14px var(--glow));
-  padding-right: .12em; /* italic overhang stays inside the clip box */
+  padding: .1em .16em .2em; margin: -.1em -.16em -.2em; /* room for the italic overhang and descenders inside the clip box */
 }
 body[data-realm="celestara"] .display { background-image: linear-gradient(180deg, #fff 0%, #ffe9b8 55%, #f3c261 100%); }
 h2 { font-size: clamp(1.15rem, 2.4vw, 1.55rem); line-height: 1.2; color: #fff; text-shadow: 0 0 16px var(--glow); }
@@ -181,7 +181,7 @@ body:not([data-realm]) .sky-base, body[data-realm="qigana"] .sky-qigana, body[da
 .hero { position: relative; display: flex; flex-direction: column; overflow: hidden; border-bottom: 1px solid var(--line);
   background: linear-gradient(180deg, #0a1156 0%, #0a1156 40%, #92a0f4 40.1%, #a7b2fb 100%); }
 .hero-top { position: relative; z-index: 2; max-width: 1280px; display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center; padding-block: 40px 0; }
-.hero-top .display { font-size: clamp(2.8rem, 8.4vw, 6.6rem); line-height: 1;
+.hero-top .display { font-size: clamp(2.8rem, 8.4vw, 6.6rem); line-height: 1.12; margin: 0;
   background-image: linear-gradient(180deg, #f4f5ff 0%, #c9ceff 40%, #b3baff 100%);
   filter: drop-shadow(0 0 1px #fff) drop-shadow(0 0 22px rgba(120, 140, 255, .9)); }
 .hero-top .lede { max-width: 50ch; font-size: clamp(1rem, 1.4vw, 1.14rem); color: #dfe3ff; }
