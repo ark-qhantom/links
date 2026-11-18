@@ -98,7 +98,7 @@
   var scene = document.getElementById('base-scene');
   var narrow = window.matchMedia('(max-width: 760px)');
   function frame() {
-    if (scene) scene.setAttribute('viewBox', narrow.matches ? '520 300 860 420' : '0 0 1600 900');
+    if (scene) scene.setAttribute('viewBox', narrow.matches ? '520 290 860 430' : '0 0 1600 900');
   }
   frame();
   if (narrow.addEventListener) narrow.addEventListener('change', frame);
@@ -125,6 +125,7 @@
     var msg = document.getElementById('wl-msg');
     var email = document.getElementById('wl-email');
     var consent = document.getElementById('wl-consent');
+    var field = document.getElementById('wl-field');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       msg.className = 'form-msg';
@@ -132,9 +133,9 @@
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) {
         msg.classList.add('is-error');
         msg.textContent = 'Enter a full email address, like you@example.com.';
-        email.setAttribute('aria-invalid', 'true'); email.focus(); return;
+        email.setAttribute('aria-invalid', 'true'); field.classList.add('is-invalid'); email.focus(); return;
       }
-      email.removeAttribute('aria-invalid');
+      email.removeAttribute('aria-invalid'); field.classList.remove('is-invalid');
       if (!consent.checked) {
         msg.classList.add('is-error');
         msg.textContent = 'Tick the box to agree to receive email about Qonvergence.';

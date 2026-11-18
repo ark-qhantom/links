@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#03041a">
 <link rel="icon" href="assets/favicon.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Michroma&family=Space+Grotesk:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@1,62..125,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,300..900;1,6..12,300..900&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,6 +17,13 @@
 
 <!-- realm skies: fixed layers behind the console, cross-faded by body[data-realm] -->
 <div class="sky" aria-hidden="true">
+  <div class="sky-layer sky-base">
+    <svg class="grid" viewBox="0 0 1000 400" preserveAspectRatio="none" fill="none" stroke="#4a66ff" stroke-opacity=".5" stroke-width="1" vector-effect="non-scaling-stroke">
+      <ellipse cx="500" cy="-260" rx="620" ry="330"/><ellipse cx="500" cy="-260" rx="760" ry="420"/><ellipse cx="500" cy="-260" rx="900" ry="520"/><ellipse cx="500" cy="-260" rx="1050" ry="630"/>
+      <path d="M500-260 L-200 400M500-260 L20 400M500-260 L220 400M500-260 L380 400M500-260 L500 400M500-260 L620 400M500-260 L780 400M500-260 L980 400M500-260 L1200 400"/>
+    </svg>
+    <i class="ring"></i><i class="planet"></i>
+  </div>
   <div class="sky-layer sky-qigana"><i></i><i></i><i></i></div>
   <div class="sky-layer sky-celestara"><i></i><i></i><i></i></div>
   <div class="sky-grain"></div>
@@ -62,83 +69,68 @@
     <div class="hero-art" aria-hidden="true">
       <svg id="base-scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" role="presentation">
         <defs>
-          <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#02031a"/><stop offset=".55" stop-color="#0a0f5e"/><stop offset="1" stop-color="#2c36dc"/>
-          </linearGradient>
-          <linearGradient id="g-ice" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#7f8cff"/><stop offset=".35" stop-color="#aab4ff"/><stop offset="1" stop-color="#d6dbff"/>
-          </linearGradient>
-          <radialGradient id="g-halo" cx=".5" cy=".5" r=".5">
-            <stop offset="0" stop-color="#cfe0ff" stop-opacity=".95"/><stop offset=".45" stop-color="#6f86ff" stop-opacity=".55"/><stop offset="1" stop-color="#2c36dc" stop-opacity="0"/>
-          </radialGradient>
-          <radialGradient id="g-orb" cx=".38" cy=".3" r=".8">
-            <stop offset="0" stop-color="#c3ccff"/><stop offset=".5" stop-color="#5a66f2"/><stop offset="1" stop-color="#1a1fa8"/>
-          </radialGradient>
+          <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#020847"/><stop offset=".6" stop-color="#06128f"/><stop offset="1" stop-color="#1027e0"/></linearGradient>
+          <linearGradient id="g-ice" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8793ff"/><stop offset=".3" stop-color="#a9b3ff"/><stop offset="1" stop-color="#c9cfff"/></linearGradient>
+          <radialGradient id="g-halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#e2ecff"/><stop offset=".42" stop-color="#8fb0ff" stop-opacity=".85"/><stop offset=".8" stop-color="#2a4cff" stop-opacity=".45"/><stop offset="1" stop-color="#1027e0" stop-opacity="0"/></radialGradient>
+          <radialGradient id="g-orb" cx=".34" cy=".26" r=".85"><stop offset="0" stop-color="#d5dcff"/><stop offset=".3" stop-color="#7f8df8"/><stop offset="1" stop-color="#2a35c8"/></radialGradient>
+          <linearGradient id="f-top" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dfe3ff"/><stop offset="1" stop-color="#aab3ff"/></linearGradient>
+          <linearGradient id="f-front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8f9bff"/><stop offset="1" stop-color="#6170f2"/></linearGradient>
+          <linearGradient id="f-side" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4553de"/><stop offset="1" stop-color="#2c38c4"/></linearGradient>
+          <filter id="soft" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="9"/></filter>
+          <filter id="far"><feGaussianBlur stdDeviation="2.2"/></filter>
         </defs>
         <rect width="1600" height="600" fill="url(#g-sky)"/>
         <g id="stars" fill="#dfe4ff"></g>
-        <circle cx="1235" cy="470" r="230" fill="url(#g-halo)"/>
-        <circle cx="1235" cy="470" r="92" fill="url(#g-orb)"/>
-        <!-- far range: light face / shadow face per peak -->
-        <g>
-          <polygon points="0,570 0,500 90,430 170,570" fill="#3d49e6"/><polygon points="90,430 250,570 170,570" fill="#1b22a6"/>
-          <polygon points="200,570 330,395 420,570" fill="#4a56ee"/><polygon points="330,395 520,570 420,570" fill="#1e259f"/>
-          <polygon points="470,570 560,470 620,570" fill="#3d49e6"/><polygon points="560,470 700,570 620,570" fill="#1b22a6"/>
-          <polygon points="1330,570 1450,440 1520,570" fill="#4a56ee"/><polygon points="1450,440 1600,540 1600,570 1520,570" fill="#1e259f"/>
-          <polygon points="330,395 352,440 318,452 300,436" fill="#c9d0ff"/><polygon points="1450,440 1470,478 1436,484" fill="#c9d0ff"/>
+        <circle cx="1240" cy="500" r="290" fill="url(#g-halo)"/>
+        <circle cx="1240" cy="452" r="104" fill="url(#g-orb)"/>
+        <!-- low ice ridge on the horizon -->
+        <g filter="url(#far)" opacity=".85">
+          <polygon points="0,566 0,516 120,470 260,566" fill="#3443dc"/><polygon points="120,470 360,566 260,566" fill="#2230bc"/>
+          <polygon points="280,566 430,452 560,566" fill="#3c4be4"/><polygon points="430,452 700,566 560,566" fill="#2432c0"/>
+          <polygon points="1380,566 1500,488 1600,540 1600,566" fill="#3443dc"/>
         </g>
         <!-- ice shelf -->
-        <rect y="566" width="1600" height="334" fill="url(#g-ice)"/>
-        <polygon points="0,566 420,566 250,640 0,660" fill="#8f9bff" opacity=".7"/>
-        <polygon points="1100,566 1600,566 1600,650 1380,610" fill="#929eff" opacity=".6"/>
-        <polygon points="0,760 380,700 760,790 520,900 0,900" fill="#e4e8ff" opacity=".55"/>
-        <polygon points="900,760 1600,700 1600,900 1040,900" fill="#bfc7ff" opacity=".6"/>
-        <!-- long shadows -->
-        <ellipse cx="1040" cy="668" rx="290" ry="20" fill="#141a8c" opacity=".55"/>
-        <ellipse cx="690" cy="640" rx="120" ry="11" fill="#141a8c" opacity=".45"/>
-        <ellipse cx="400" cy="800" rx="210" ry="18" fill="#1a209a" opacity=".3"/>
-        <!-- mast -->
-        <polygon points="842,640 850,360 858,640" fill="#2026b4"/>
-        <polygon points="850,360 854,360 862,640 858,640" fill="#0f1470"/>
-        <rect x="826" y="430" width="48" height="5" fill="#2a31c4"/><rect x="832" y="500" width="36" height="5" fill="#2a31c4"/>
-        <circle class="beacon" cx="852" cy="354" r="7" fill="#eef1ff"/>
-        <!-- annex module -->
-        <polygon points="640,588 760,588 760,628 640,628" fill="#4c58ee"/>
-        <polygon points="640,588 664,572 784,572 760,588" fill="#b4bdff"/>
-        <polygon points="760,588 784,572 784,612 760,628" fill="#232ab8"/>
-        <rect x="656" y="600" width="18" height="10" fill="#e8ecff"/><rect x="684" y="600" width="18" height="10" fill="#e8ecff"/><rect x="712" y="600" width="18" height="10" fill="#9aa6ff"/>
-        <rect x="652" y="628" width="6" height="14" fill="#141a8c"/><rect x="742" y="628" width="6" height="14" fill="#141a8c"/>
-        <!-- connector -->
-        <polygon points="784,596 900,584 900,600 784,612" fill="#343ed6"/>
-        <!-- main module on stilts -->
-        <polygon points="900,528 1140,528 1140,604 900,604" fill="#5561f2"/>
-        <polygon points="900,528 944,500 1184,500 1140,528" fill="#c3cbff"/>
-        <polygon points="1140,528 1184,500 1184,576 1140,604" fill="#262dbe"/>
-        <g fill="#eef1ff"><rect x="920" y="548" width="26" height="14"/><rect x="956" y="548" width="26" height="14"/><rect x="992" y="548" width="26" height="14"/><rect x="1064" y="548" width="26" height="14"/><rect x="1100" y="548" width="26" height="14"/></g>
-        <rect x="1028" y="548" width="26" height="14" fill="#8e9bff"/>
-        <rect x="900" y="578" width="240" height="4" fill="#3640d8"/>
-        <g fill="#141a8c"><rect x="914" y="604" width="8" height="44"/><rect x="1016" y="604" width="8" height="44"/><rect x="1118" y="604" width="8" height="44"/><rect x="1166" y="578" width="7" height="52"/></g>
-        <!-- upper deck + dish -->
-        <polygon points="960,500 1060,500 1060,470 960,470" fill="#4753ea"/>
-        <polygon points="960,470 980,458 1080,458 1060,470" fill="#b4bdff"/>
-        <polygon points="1060,470 1080,458 1080,488 1060,500" fill="#232ab8"/>
-        <polygon points="1104,500 1112,462 1120,500" fill="#2026b4"/>
-        <polygon points="1086,440 1136,452 1118,474 1096,468" fill="#dfe4ff"/><polygon points="1096,468 1118,474 1108,480" fill="#7f8cff"/>
-        <!-- geodesic dome -->
-        <g>
-          <polygon points="1230,640 1246,592 1290,566 1290,640" fill="#8f9bff"/>
-          <polygon points="1246,592 1290,566 1268,560" fill="#dfe4ff"/>
-          <polygon points="1290,566 1334,592 1350,640 1290,640" fill="#3a45de"/>
-          <polygon points="1290,566 1312,560 1334,592" fill="#6672f6"/>
-          <polygon points="1268,560 1290,566 1312,560 1290,552" fill="#eef1ff"/>
-          <polygon points="1230,640 1246,592 1262,640" fill="#b4bdff"/>
-          <polygon points="1334,592 1350,640 1318,640" fill="#232ab8"/>
+        <rect y="564" width="1600" height="336" fill="url(#g-ice)"/>
+        <rect y="562" width="1600" height="5" fill="#2b45ff" opacity=".75"/>
+        <!-- soft long shadows, as in the reference -->
+        <g filter="url(#soft)" fill="#1a24b4">
+          <ellipse cx="1030" cy="676" rx="330" ry="19" opacity=".8"/>
+          <ellipse cx="690" cy="650" rx="140" ry="10" opacity=".65"/>
+          <ellipse cx="1300" cy="660" rx="110" ry="10" opacity=".6"/>
+          <ellipse cx="360" cy="800" rx="260" ry="20" opacity=".4"/>
+          <ellipse cx="1500" cy="770" rx="200" ry="16" opacity=".35"/>
         </g>
-        <!-- fuel/storage cubes -->
-        <polygon points="560,618 600,618 600,650 560,650" fill="#4c58ee"/><polygon points="560,618 572,608 612,608 600,618" fill="#b4bdff"/><polygon points="600,618 612,608 612,640 600,650" fill="#232ab8"/>
-        <!-- near drift -->
-        <polygon points="0,900 0,838 300,862 620,900" fill="#f1f3ff" opacity=".8"/>
+        <!-- mast -->
+        <polygon points="842,646 850,350 858,646" fill="url(#f-front)"/><polygon points="850,350 855,350 864,646 858,646" fill="url(#f-side)"/>
+        <rect x="824" y="430" width="52" height="6" fill="#aab3ff"/><rect x="832" y="504" width="36" height="6" fill="#aab3ff"/>
+        <circle class="beacon" cx="852" cy="344" r="8" fill="#ffffff"/>
+        <!-- annex module -->
+        <polygon points="640,590 760,590 760,632 640,632" fill="url(#f-front)"/>
+        <polygon points="640,590 664,572 784,572 760,590" fill="url(#f-top)"/>
+        <polygon points="760,590 784,572 784,614 760,632" fill="url(#f-side)"/>
+        <g fill="#eef1ff"><rect x="656" y="603" width="18" height="10" rx="2"/><rect x="684" y="603" width="18" height="10" rx="2"/></g><rect x="712" y="603" width="18" height="10" rx="2" fill="#aab3ff"/>
+        <rect x="652" y="632" width="7" height="14" fill="#2c38c4"/><rect x="742" y="632" width="7" height="14" fill="#2c38c4"/>
+        <polygon points="784,598 900,586 900,602 784,614" fill="url(#f-side)"/>
+        <!-- main module on stilts -->
+        <polygon points="900,528 1140,528 1140,606 900,606" fill="url(#f-front)"/>
+        <polygon points="900,528 944,498 1184,498 1140,528" fill="url(#f-top)"/>
+        <polygon points="1140,528 1184,498 1184,576 1140,606" fill="url(#f-side)"/>
+        <g fill="#f4f6ff"><rect x="920" y="548" width="26" height="15" rx="3"/><rect x="956" y="548" width="26" height="15" rx="3"/><rect x="992" y="548" width="26" height="15" rx="3"/><rect x="1064" y="548" width="26" height="15" rx="3"/><rect x="1100" y="548" width="26" height="15" rx="3"/></g>
+        <rect x="1028" y="548" width="26" height="15" rx="3" fill="#aab3ff"/>
+        <g fill="#2c38c4"><rect x="914" y="606" width="9" height="46"/><rect x="1016" y="606" width="9" height="46"/><rect x="1118" y="606" width="9" height="46"/><rect x="1166" y="580" width="8" height="54"/></g>
+        <!-- upper deck + dish -->
+        <polygon points="960,498 1060,498 1060,468 960,468" fill="url(#f-front)"/>
+        <polygon points="960,468 980,454 1080,454 1060,468" fill="url(#f-top)"/>
+        <polygon points="1060,468 1080,454 1080,484 1060,498" fill="url(#f-side)"/>
+        <polygon points="1104,498 1112,460 1120,498" fill="url(#f-side)"/>
+        <polygon points="1086,436 1138,450 1118,474 1096,466" fill="url(#f-top)"/>
+        <!-- dome -->
+        <path d="M1232 646 A68 68 0 0 1 1368 646 Z" fill="url(#g-orb)"/>
+        <path d="M1232 646 A68 68 0 0 1 1300 578 A40 68 0 0 0 1268 646 Z" fill="#dfe3ff" opacity=".45"/>
+        <!-- storage cube -->
+        <polygon points="556,620 600,620 600,654 556,654" fill="url(#f-front)"/><polygon points="556,620 570,608 614,608 600,620" fill="url(#f-top)"/><polygon points="600,620 614,608 614,642 600,654" fill="url(#f-side)"/>
       </svg>
+      <div class="hero-grain"></div>
       <div class="hero-shade"></div>
     </div>
     <div class="hero-body wrap">
@@ -227,21 +219,23 @@
 
 <!-- ============ WAITLIST ============ -->
 <section class="view" data-view="waitlist" hidden>
-  <div class="wrap stack narrow">
+  <div class="wrap stack narrow auth">
     <header class="head">
-      <p class="eyebrow">Qonvergence <span class="tag t-dev">In development</span></p>
-      <h1 class="display" tabindex="-1">Qonvergence Waitlist</h1>
+      <p class="eyebrow"><span class="tag t-dev">In development</span></p>
+      <h1 class="display" tabindex="-1" aria-label="Qonvergence Waitlist">Qonvergence</h1>
+      <p class="auth-sub" aria-hidden="true">Waitlist</p>
       <p class="lede">Leave your email and we will write when Qonvergence opens.</p>
     </header>
-    <div class="mock" role="note">
-      <strong>Mock form. Not connected.</strong>
-      <span>This preview does not send or store anything. No signup backend has been chosen or tested yet.</span>
-    </div>
     <form class="form" id="waitlist-form" novalidate>
-      <label for="wl-email">Email address</label>
-      <input id="wl-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="wl-msg">
+      <div class="field" id="wl-field">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-4 4-5.5 7.5-5.5s6.500 1.500 7.500 5.500z"/></svg>
+        <label class="visually-hidden" for="wl-email">Email address</label>
+        <input id="wl-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="Email" required aria-describedby="wl-msg">
+      </div>
       <label class="check" for="wl-consent"><input id="wl-consent" name="consent" type="checkbox" required><span>I agree to receive email from Qhantom about Qonvergence.</span></label>
-      <button class="btn" type="submit">Join the waitlist</button>
+      <button class="btn" type="submit">Join the waitlist <small>Preview</small></button>
+      <a class="btn ghost" href="#qonvergence" data-nav>Back to Qonvergence</a>
+      <p class="mock" role="note"><strong>Preview only. Nothing is sent or stored.</strong> No waitlist backend is connected or tested yet.</p>
       <p class="form-msg" id="wl-msg" role="status" aria-live="polite"></p>
       <p class="fine">Draft privacy wording, not approved: We use your email only to send Qonvergence updates. You can ask us to remove it at any time by writing to <span class="addr">hello@qhantom.com</span>.</p>
     </form>
