@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>About Qhantom</title>
+<meta name="description" content="Qonverging the human experience.">
+<meta property="og:title" content="About Qhantom">
+<meta property="og:description" content="Qonverging the human experience.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://qhantom.com/assets/og-qhantom-launch.jpg?v=20260618">
+<meta property="og:image:width" content="1672">
+<meta property="og:image:height" content="941">
+<meta property="og:image:alt" content="Qigana council fresco for Qhantom Corporation">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Qhantom">
+<meta name="twitter:description" content="Qonverging the human experience.">
+<meta name="twitter:image" content="https://qhantom.com/assets/og-qhantom-launch.jpg?v=20260618">
+<meta name="theme-color" content="#03041a">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@1,62..125,100..900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,300..900;1,6..12,300..900&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<script>
+(function () {
+  var map = {"home":"/","qonvergence":"/qonvergence","realm-runners":"/realm-runners","qigana":"/realm-runners/qigana","celestara":"/realm-runners/celestara","archive":"/realm-runners/archive","sonics":"/sonics","shop":"/fashion","about":"/company","careers":"/careers"};
+  function norm(path) {
+    if (path.endsWith("/index.html")) path = path.slice(0, -"/index.html".length);
+    if (path.length > 1 && path.endsWith("/")) path = path.slice(0, -1);
+    if (path === "") path = "/";
+    return path;
+  }
+  function go() {
+    var hash = (location.hash || "").replace(/^#/, "");
+    var amp = hash.indexOf("&");
+    if (amp !== -1) hash = hash.slice(0, amp);
+    var path = norm(location.pathname);
+    if (hash === "papers") {
+      if (path !== "/qonvergence") location.replace("/qonvergence#papers");
+      return;
+    }
+    var dest = map[hash];
+    if (!dest) return;
+    if (path !== norm(dest)) location.replace(dest);
+    else history.replaceState(null, "", dest);
+  }
+  go();
+  window.addEventListener("hashchange", go);
+})();
+</script>
+</head>
+<body data-view="about">
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- realm skies: fixed layers behind the console, cross-faded by body[data-realm] -->
+<div class="sky" aria-hidden="true">
+  <div class="sky-layer sky-base">
+    <svg class="grid" viewBox="0 0 1000 400" preserveAspectRatio="none" fill="none" stroke="#4a66ff" stroke-opacity=".5" stroke-width="1" vector-effect="non-scaling-stroke">
+      <ellipse cx="500" cy="-260" rx="620" ry="330"/><ellipse cx="500" cy="-260" rx="760" ry="420"/><ellipse cx="500" cy="-260" rx="900" ry="520"/><ellipse cx="500" cy="-260" rx="1050" ry="630"/>
+      <path d="M500-260 L-200 400M500-260 L20 400M500-260 L220 400M500-260 L380 400M500-260 L500 400M500-260 L620 400M500-260 L780 400M500-260 L980 400M500-260 L1200 400"/>
+    </svg>
+    <i class="ring"></i><i class="planet"></i>
+  </div>
+  <div class="sky-layer sky-qigana"><i></i><i></i><i></i></div>
+  <div class="sky-layer sky-archive"></div>
+  <div class="sky-layer sky-celestara"><i></i><i></i><i></i></div>
+  <div class="sky-grain"></div>
+</div>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="/" data-nav>
+      <img src="/assets/logo-96.webp" width="96" height="91" alt="">
+      <span>Qhantom</span>
+    </a>
+    <nav class="nav-primary" aria-label="Primary">
+      <a href="/qonvergence" data-nav>Qonvergence</a>
+      <a href="/realm-runners" data-nav>Realm Runners</a>
+      <a href="/fashion" data-nav>Shop</a>
+    </nav>
+    <nav class="nav-secondary" aria-label="Company">
+      <a href="/company" data-nav aria-current="page">About</a>
+      <a href="/careers" data-nav>Careers</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-panel">Menu</button>
+  </div>
+  <nav class="menu-panel" id="menu-panel" aria-label="All destinations" hidden>
+    <a href="/" data-nav>Home</a>
+    <a href="/qonvergence" data-nav>Qonvergence</a>
+    <a href="/realm-runners" data-nav>Realm Runners</a>
+    <a class="sub" href="/sonics" data-nav data-exact>Sonics · music</a>
+    <a class="sub" href="/realm-runners/archive" data-nav data-exact>Archive</a>
+    <a href="/fashion" data-nav>Shop</a>
+    <a href="/company" data-nav aria-current="page">About</a>
+    <a href="/careers" data-nav>Careers</a>
+  </nav>
+</header>
+
+<main id="main">
+<section class="view" data-view="about">
+  <div class="wrap stack">
+    <header class="head">
+      <p class="eyebrow">Company</p>
+      <h1 class="display" tabindex="-1">About Qhantom</h1>
+      <p class="about-line">Qonverging the human experience.</p>
+    </header>
+    <section class="block prose">
+      <p>Qhantom is a technology and worldbuilding company bringing storytelling, art, research and human collaboration together. We believe technology should expand what people can create and experience together, without losing the imagination, care and individuality that make those experiences meaningful.</p>
+      <p>Our story goes like this, Qhantom comes from another dimension. After accidentally discovering Earth, its team establishes a base in Antarctica and begins working toward a stable connection with their home realm, Qigana. Their culture, stories and technologies become a bridge between worlds.</p>
+      <p>Here on Earth, that same idea guides our work. <a class="link" href="/realm-runners" data-nav data-exact>Realm Runners</a> is our original universe, told through animation, music, lore and interactive experiences. <a class="link" href="/qonvergence" data-nav data-exact>Qonvergence</a> explores new ways for people, ideas and worlds to come together, including our early research into persistent digital worlds.</p>
+      <p>Different mediums, and one shared ambition: more connection, more collaboration and more possibility for the human experience.</p>
+    </section>
+    <section class="block award">
+      <img src="/assets/deep-tech-pioneers.webp" width="320" height="320" alt="Hello Tomorrow Deep Tech Pioneers" loading="lazy">
+      <div><p class="eyebrow">Award</p><h2>Hello Tomorrow</h2><p>Selected as a Deep Tech Pioneer.</p></div>
+    </section>
+    <section class="block">
+      <p class="eyebrow">Contact</p>
+      <dl class="contacts">
+        <div><dt>General</dt><dd><span class="addr">hello@qhantom.com</span> <button class="copy" type="button" data-copy="hello@qhantom.com">Copy</button></dd></div>
+        <div><dt>Press</dt><dd><span class="addr">press@qhantom.com</span> <button class="copy" type="button" data-copy="press@qhantom.com">Copy</button></dd></div>
+      </dl>
+    </section>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <nav aria-label="Footer">
+      <a href="/company" data-nav aria-current="page">About</a>
+      <a href="/careers" data-nav>Careers</a>
+    </nav>
+    <p class="foot-contact"><span class="addr">hello@qhantom.com</span></p>
+    <p class="foot-copy">© 2026 Qhantom</p>
+  </div>
+</footer>
+<script src="/app.js"></script>
+</body>
+</html>
