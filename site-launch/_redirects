@@ -1,0 +1,59 @@
+# Cloudflare Pages redirects for the redesigned Qhantom site.
+# Exact paths, with and without a trailing slash. First match wins.
+
+# Old research, technology, and simulations pages.
+/research                     /qonvergence     301
+/research/                    /qonvergence     301
+/research/reports             /qonvergence     301
+/research/reports/            /qonvergence     301
+/research/experiments         /qonvergence     301
+/research/experiments/        /qonvergence     301
+/tech                         /qonvergence     301
+/tech/                        /qonvergence     301
+/tech/qhone                   /qonvergence     301
+/tech/qhone/                  /qonvergence     301
+/tech/qore                    /qonvergence     301
+/tech/qore/                   /qonvergence     301
+/tech/qosmos                  /qonvergence     301
+/tech/qosmos/                 /qonvergence     301
+/tech/qome                    /qonvergence     301
+/tech/qome/                   /qonvergence     301
+/simulations                  /qonvergence     301
+/simulations/                 /qonvergence     301
+/technology                   /qonvergence     301
+/technology/                  /qonvergence     301
+
+# Old Realm Runners pages.
+/realm-runners/story          /realm-runners   301
+/realm-runners/story/         /realm-runners   301
+/realm-runners/recruits       /realm-runners   301
+/realm-runners/recruits/      /realm-runners   301
+
+# Community, contest gallery, studios, and the cancelled contest.
+/community                    /                301
+/community/                   /                301
+/gallery                      /                301
+/gallery/                     /                301
+/studios                      /                301
+/studios/                     /                301
+/quo-vadis                    /                301
+/quo-vadis/                   /                301
+/quo-vadis/rules              /                301
+/quo-vadis/rules/             /                301
+/quo-vadis/*                  /                301
+
+# Former Sonics address.
+/audio                        /sonics          301
+/audio/                       /sonics          301
+
+# Nav words that were never separate pages.
+/shop                         /fashion         301
+/shop/                        /fashion         301
+/about                        /company         301
+/about/                       /company         301
+
+# Careers index and the removed role. Role pages under this path stay as files.
+/company/careers/cinematic-editor    /careers  301
+/company/careers/cinematic-editor/   /careers  301
+/company/careers                     /careers  301
+/company/careers/                    /careers  301
