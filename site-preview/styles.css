@@ -499,3 +499,5 @@ body[data-realm="archive"] .menu-panel a { color: var(--ice); }
   .w-arrow { width: 1px; height: 28px; margin: 0 auto; }
   .w-arrow::after { right: auto; left: -4px; top: auto; bottom: -1px; border: 0; border-top: 7px solid var(--ultra); border-inline: 4.500px solid transparent; }
 }
+
+.ext.soon { color: var(--dim); font-weight: 700; }
