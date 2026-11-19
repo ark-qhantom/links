@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#03041a">
 <link rel="icon" href="assets/favicon.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@1,62..125,100..900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,300..900;1,6..12,300..900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@1,62..125,100..900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,300..900;1,6..12,300..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -26,6 +26,7 @@
   </div>
   <div class="sky-layer sky-qigana"><i></i><i></i><i></i></div>
   <div class="sky-layer sky-archive"></div>
+  <div class="sky-layer sky-worlds"></div>
   <div class="sky-layer sky-celestara"><i></i><i></i><i></i></div>
   <div class="sky-grain"></div>
 </div>
@@ -119,13 +120,66 @@
 </section>
 
 <!-- ============ QONVERGENCE ============ -->
-<section class="view" data-view="qonvergence" hidden>
-  <div class="wrap stack">
-    <header class="head">
-      <p class="eyebrow">Research</p>
-      <h1 class="display" tabindex="-1">Qonvergence•<wbr>Worlds</h1>
-      <p class="lede">Qonvergence•Worlds is Qhantom Labs’ research into persistent shared worlds for people and AI agents. We’re starting with one small room to test whether a world can keep a consistent record of what happens, even after a restart.</p>
+<section class="view" data-view="qonvergence" data-realm="worlds" hidden>
+  <div class="wrap stack w">
+    <header class="w-hero">
+      <div class="w-hero-text">
+        <p class="eyebrow">Qonvergence Worlds</p>
+        <h1 class="display" tabindex="-1">State first. Pixels later.</h1>
+        <p class="lede">Qonvergence Worlds is the spatial-economic transaction protocol for autonomous agents. We provide the authoritative ground truth that prevents AI omniscience, stops hallucinations, and gives your models a persistent reality to plan against.</p>
+        <p class="actions"><span class="btn is-placeholder" aria-disabled="true">Read the Docs</span><span class="btn ghost is-placeholder" aria-disabled="true">View the Lab</span></p>
+        <p class="w-status"><span>status</span> Research. We’re starting with one small room to test whether a world can keep a consistent record of what happens, even after a restart.</p>
+      </div>
+      <figure class="w-term" aria-label="Illustration of a three-way commit: an agent’s memory, a position in space and an economic ledger change together">
+        <div class="w-term-bar"><i></i><i></i><i></i><span>3-way commit · illustration</span></div>
+        <pre><code><span class="l l1"><b>BEGIN</b> tx 0x4f2a  agent=a17  action=buy(lantern)</span>
+<span class="l l2">  <em>memory</em>  a17.knows  += "bought lantern at stall 3"</span>
+<span class="l l3">  <em>space </em>  lantern    (4,2,0) → a17.inventory</span>
+<span class="l l4">  <em>ledger</em>  a17 −12    stall3 +12</span>
+<span class="l l5"><b>COMMIT</b>  memory ✓  space ✓  ledger ✓</span></code></pre>
+      </figure>
     </header>
+
+    <section class="block w-sec">
+      <p class="eyebrow">The problem</p>
+      <h2>Your agents shouldn’t see through walls.</h2>
+      <p>When you let LLMs read your global game state, you create AI Omniscience. Agents inevitably discover data they shouldn’t know—hidden inventory, locked coordinates, and future events. Standard frameworks patch this with prompts. We solve it with infrastructure.</p>
+      <div class="w-card">
+        <h3>The Observation Gateway</h3>
+        <p>A rigorous middleware API that acts as a bouncer between your world and your models. It actively scrubs unobserved global state, enforcing strict line-of-sight and occlusion before the context ever reaches the LLM.</p>
+      </div>
+    </section>
+
+    <section class="block w-sec">
+      <p class="eyebrow">The solution</p>
+      <h2>Atomic Spatial Transactions</h2>
+      <p>In standard environments, if a server crashes between an agent’s action and the database write, reality breaks. Qonvergence binds the agent’s authorized memory, the physical geometry, and the economic ledger into a single, unbreakable transaction.</p>
+      <ul class="w-points">
+        <li><strong>Economic Integrity</strong><span>If two agents try to buy the same item simultaneously, the ledger perfectly reconciles. No duplicate supply.</span></li>
+        <li><strong>Crash Recovery Without Amnesia</strong><span>If the simulation stops, agents reboot with perfect cognitive continuity. No unobserved facts invented, no committed effects lost.</span></li>
+        <li><strong>Asynchronous Efficiency</strong><span>Decouple your physics clock from your AI clock. Let deterministic physics run instantly while agents reason on batched, compute-friendly ticks.</span></li>
+      </ul>
+    </section>
+
+    <section class="block w-sec">
+      <p class="eyebrow">The architecture</p>
+      <h2>Fits into your stack</h2>
+      <div class="w-arch" role="img" aria-label="Three pillars from left to right: the ACID Ledger, the Headless Simulation and Bring Your Own Renderer. The Observation Gateway sits between the simulation and the LLM.">
+        <div class="w-pillar p1"><span class="w-k">The Truth</span><strong>ACID Ledger</strong><span>Economy and permanent state.</span></div>
+        <span class="w-arrow a1" aria-hidden="true"></span>
+        <div class="w-pillar p2"><span class="w-k">The Physics</span><strong>Headless Simulation</strong><span>Spatial grids and raycasting.</span></div>
+        <div class="w-gate"><span class="w-down" aria-hidden="true"></span><div class="w-gate-box"><span class="w-k">Between simulation and model</span><strong>Observation Gateway</strong><span>Only what the agent could observe passes.</span></div><span class="w-down" aria-hidden="true"></span><div class="w-llm">LLM</div></div>
+        <span class="w-arrow a2" aria-hidden="true"></span>
+        <div class="w-pillar p3"><span class="w-k">The Presentation</span><strong>Bring Your Own Renderer</strong><span>Three.js, Unreal, Godot.</span></div>
+      </div>
+    </section>
+
+    <section class="w-next">
+      <span class="w-ph">Documentation <small>placeholder</small></span>
+      <span class="w-ph">GitHub <small>placeholder</small></span>
+    </section>
+
+    <p class="note" data-note>Built from the “Qonvergence Worlds website spec” PDF. Three things differ from it or from your last instructions: (1) the email capture in the spec is left out, because you said no waitlist and no replacement; (2) the buttons and footer links are inert placeholders, since no docs, lab page or repository link exists yet; (3) I added the “status: Research” line under the buttons, using your one-room sentence, because the copy otherwise reads as a shipped product.</p>
   </div>
 </section>
 
