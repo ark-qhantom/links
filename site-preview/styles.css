@@ -470,7 +470,8 @@ body[data-realm="archive"] .menu-panel a { color: var(--ice); }
 /* ---------- Qonvergence Worlds page, in the site's own look ---------- */
 .lab { width: 100%; margin: 0; border-radius: 26px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 0 44px rgba(60, 90, 255, .5), inset 0 1px 0 rgba(215, 222, 255, .4); }
 .lab img { width: 100%; height: auto; display: block; }
-.lab + .fine { margin-top: -24px; max-width: 70ch; }
+.deploy { font-style: normal; font-size: 1rem; line-height: 1.55; max-width: 60ch; padding: 2px 0 2px 18px; border-left: 2px solid var(--ultra); color: var(--ice); }
+.deploy strong { font-weight: 800; color: #fff; }
 .gateway { width: 100%; max-width: 760px; margin-top: 8px; padding: 4px 0 4px 22px; border-left: 2px solid var(--ultra); display: flex; flex-direction: column; gap: 8px; }
 .gateway p { font-style: normal; max-width: 62ch; }
 .steps.steps { max-width: none; }
