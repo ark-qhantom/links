@@ -36,6 +36,10 @@
 /gallery/                     /                301
 /studios                      /                301
 /studios/                     /                301
+/studios/*                    /                301
+/preview                      /                301
+/preview/                     /                301
+/preview/*                    /                301
 /quo-vadis                    /                301
 /quo-vadis/                   /                301
 /quo-vadis/rules              /                301
@@ -51,6 +55,16 @@
 /shop/                        /fashion         301
 /about                        /company         301
 /about/                       /company         301
+
+# Renamed roles from the live _redirects. Listed before the careers index.
+/company/careers/ai-agent-growth-systems-strategist    /company/careers/agentic-engineer      301
+/company/careers/ai-agent-growth-systems-strategist/   /company/careers/agentic-engineer      301
+/company/careers/2d-animator-hybrid-pipeline           /company/careers/animation-developer   301
+/company/careers/2d-animator-hybrid-pipeline/          /company/careers/animation-developer   301
+/company/careers/3d-anime-animator                     /company/careers/animation-developer   301
+/company/careers/3d-anime-animator/                    /company/careers/animation-developer   301
+/company/careers/narrative-systems-writer              /company/careers/story-script-writer   301
+/company/careers/narrative-systems-writer/             /company/careers/story-script-writer   301
 
 # Careers index and the removed role. Role pages under this path stay as files.
 /company/careers/cinematic-editor    /careers  301
