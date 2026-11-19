@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Archive</title>
+<meta name="description" content="Long before the Realm Runners began their journeys, kingdoms rose and fell, and relics outlasted the people who made them.">
+<meta property="og:title" content="Archive">
+<meta property="og:description" content="Long before the Realm Runners began their journeys, kingdoms rose and fell, and relics outlasted the people who made them.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://qhantom.com/assets/og-qhantom-launch.jpg?v=20260618">
+<meta property="og:image:width" content="1672">
+<meta property="og:image:height" content="941">
+<meta property="og:image:alt" content="Qigana council fresco for Qhantom Corporation">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Archive">
+<meta name="twitter:description" content="Long before the Realm Runners began their journeys, kingdoms rose and fell, and relics outlasted the people who made them.">
+<meta name="twitter:image" content="https://qhantom.com/assets/og-qhantom-launch.jpg?v=20260618">
+<meta name="theme-color" content="#03041a">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@1,62..125,100..900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,300..900;1,6..12,300..900&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<script>
+(function () {
+  var map = {"home":"/","qonvergence":"/qonvergence","realm-runners":"/realm-runners","qigana":"/realm-runners/qigana","celestara":"/realm-runners/celestara","archive":"/realm-runners/archive","sonics":"/sonics","shop":"/fashion","about":"/company","careers":"/careers"};
+  function norm(path) {
+    if (path.endsWith("/index.html")) path = path.slice(0, -"/index.html".length);
+    if (path.length > 1 && path.endsWith("/")) path = path.slice(0, -1);
+    if (path === "") path = "/";
+    return path;
+  }
+  function go() {
+    var hash = (location.hash || "").replace(/^#/, "");
+    var amp = hash.indexOf("&");
+    if (amp !== -1) hash = hash.slice(0, amp);
+    var path = norm(location.pathname);
+    if (hash === "papers") {
+      if (path !== "/qonvergence") location.replace("/qonvergence#papers");
+      return;
+    }
+    var dest = map[hash];
+    if (!dest) return;
+    if (path !== norm(dest)) location.replace(dest);
+    else history.replaceState(null, "", dest);
+  }
+  go();
+  window.addEventListener("hashchange", go);
+})();
+</script>
+</head>
+<body data-view="archive" data-realm="archive">
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- realm skies: fixed layers behind the console, cross-faded by body[data-realm] -->
+<div class="sky" aria-hidden="true">
+  <div class="sky-layer sky-base">
+    <svg class="grid" viewBox="0 0 1000 400" preserveAspectRatio="none" fill="none" stroke="#4a66ff" stroke-opacity=".5" stroke-width="1" vector-effect="non-scaling-stroke">
+      <ellipse cx="500" cy="-260" rx="620" ry="330"/><ellipse cx="500" cy="-260" rx="760" ry="420"/><ellipse cx="500" cy="-260" rx="900" ry="520"/><ellipse cx="500" cy="-260" rx="1050" ry="630"/>
+      <path d="M500-260 L-200 400M500-260 L20 400M500-260 L220 400M500-260 L380 400M500-260 L500 400M500-260 L620 400M500-260 L780 400M500-260 L980 400M500-260 L1200 400"/>
+    </svg>
+    <i class="ring"></i><i class="planet"></i>
+  </div>
+  <div class="sky-layer sky-qigana"><i></i><i></i><i></i></div>
+  <div class="sky-layer sky-archive"></div>
+  <div class="sky-layer sky-celestara"><i></i><i></i><i></i></div>
+  <div class="sky-grain"></div>
+</div>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="/" data-nav>
+      <img src="/assets/logo-96.webp" width="96" height="91" alt="">
+      <span>Qhantom</span>
+    </a>
+    <nav class="nav-primary" aria-label="Primary">
+      <a href="/qonvergence" data-nav>Qonvergence</a>
+      <a href="/realm-runners" data-nav aria-current="page">Realm Runners</a>
+      <a href="/fashion" data-nav>Shop</a>
+    </nav>
+    <nav class="nav-secondary" aria-label="Company">
+      <a href="/company" data-nav>About</a>
+      <a href="/careers" data-nav>Careers</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-panel">Menu</button>
+  </div>
+  <nav class="menu-panel" id="menu-panel" aria-label="All destinations" hidden>
+    <a href="/" data-nav>Home</a>
+    <a href="/qonvergence" data-nav>Qonvergence</a>
+    <a href="/realm-runners" data-nav aria-current="page">Realm Runners</a>
+    <a class="sub" href="/sonics" data-nav data-exact>Sonics · music</a>
+    <a class="sub" href="/realm-runners/archive" data-nav data-exact aria-current="page">Archive</a>
+    <a href="/fashion" data-nav>Shop</a>
+    <a href="/company" data-nav>About</a>
+    <a href="/careers" data-nav>Careers</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<main id="main">
+<section class="view" data-view="archive" data-realm="archive">
+  <div class="wrap stack">
+    <nav class="subnav" aria-label="Realm Runners">
+      <a href="/realm-runners" data-nav data-exact>Realms</a>
+      <a href="/realm-runners/archive" data-nav data-exact aria-current="page">Archive</a>
+      <a href="/sonics" data-nav data-exact>Sonics</a>
+    </nav>
+    <header class="head center">
+      <p class="eyebrow">Realm Runners</p>
+      <h1 class="display" tabindex="-1" aria-label="Realm Runners Archive">Archive</h1>
+      <svg class="orn" viewBox="0 0 240 40" aria-hidden="true"><line x1="0" y1="20" x2="92" y2="20"/><line x1="148" y1="20" x2="240" y2="20"/><circle cx="120" cy="20" r="17" class="orn-disc"/><circle cx="120" cy="20" r="12.500"/><path d="M120 9.500 l2.600 7.900 7.900 2.600 -7.900 2.600 -2.600 7.900 -2.600 -7.900 -7.900 -2.600 7.900 -2.600z" class="orn-star"/><circle cx="96" cy="20" r="2.200" class="orn-dot"/><circle cx="144" cy="20" r="2.200" class="orn-dot"/></svg>
+      <p class="lede">Long before the Realm Runners began their journeys, kingdoms rose and fell, and relics outlasted the people who made them. The Archive brings that ancient history to life in short films, exploring the legends and lost civilizations that shaped the realms we know today.</p>
+      <p><a class="btn ghost" href="https://www.youtube.com/@realmrunnersarchive" target="_blank" rel="noopener">Realm Runners Archive on YouTube ↗</a></p>
+    </header>
+    <div class="frescoes">
+      <img src="/assets/archive/hero-qigana-council-fresco.webp" width="640" height="360" alt="Qigana council fresco" loading="lazy">
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <nav aria-label="Footer">
+      <a href="/company" data-nav>About</a>
+      <a href="/careers" data-nav>Careers</a>
+    </nav>
+    <p class="foot-contact"><span class="addr">hello@qhantom.com</span></p>
+    <p class="foot-copy">© 2026 Qhantom</p>
+  </div>
+</footer>
+<script src="/app.js"></script>
+</body>
+</html>

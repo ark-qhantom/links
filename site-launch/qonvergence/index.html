@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Qonvergence•Worlds</title>
+<meta name="description" content="We are engineering the foundational substrate for persistent digital realities.">
+<meta property="og:title" content="Qonvergence•Worlds">
+<meta property="og:description" content="We are engineering the foundational substrate for persistent digital realities.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://qhantom.com/assets/og-qhantom-launch.jpg?v=20260618">
+<meta property="og:image:width" content="1672">
+<meta property="og:image:height" content="941">
+<meta property="og:image:alt" content="Qigana council fresco for Qhantom Corporation">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Qonvergence•Worlds">
+<meta name="twitter:description" content="We are engineering the foundational substrate for persistent digital realities.">
+<meta name="twitter:image" content="https://qhantom.com/assets/og-qhantom-launch.jpg?v=20260618">
+<meta name="theme-color" content="#03041a">
+<link rel="icon" href="/assets/favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@1,62..125,100..900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,300..900;1,6..12,300..900&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<script>
+(function () {
+  var map = {"home":"/","qonvergence":"/qonvergence","realm-runners":"/realm-runners","qigana":"/realm-runners/qigana","celestara":"/realm-runners/celestara","archive":"/realm-runners/archive","sonics":"/sonics","shop":"/fashion","about":"/company","careers":"/careers"};
+  function norm(path) {
+    if (path.endsWith("/index.html")) path = path.slice(0, -"/index.html".length);
+    if (path.length > 1 && path.endsWith("/")) path = path.slice(0, -1);
+    if (path === "") path = "/";
+    return path;
+  }
+  function go() {
+    var hash = (location.hash || "").replace(/^#/, "");
+    var amp = hash.indexOf("&");
+    if (amp !== -1) hash = hash.slice(0, amp);
+    var path = norm(location.pathname);
+    if (hash === "papers") {
+      if (path !== "/qonvergence") location.replace("/qonvergence#papers");
+      return;
+    }
+    var dest = map[hash];
+    if (!dest) return;
+    if (path !== norm(dest)) location.replace(dest);
+    else history.replaceState(null, "", dest);
+  }
+  go();
+  window.addEventListener("hashchange", go);
+})();
+</script>
+</head>
+<body data-view="qonvergence">
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- realm skies: fixed layers behind the console, cross-faded by body[data-realm] -->
+<div class="sky" aria-hidden="true">
+  <div class="sky-layer sky-base">
+    <svg class="grid" viewBox="0 0 1000 400" preserveAspectRatio="none" fill="none" stroke="#4a66ff" stroke-opacity=".5" stroke-width="1" vector-effect="non-scaling-stroke">
+      <ellipse cx="500" cy="-260" rx="620" ry="330"/><ellipse cx="500" cy="-260" rx="760" ry="420"/><ellipse cx="500" cy="-260" rx="900" ry="520"/><ellipse cx="500" cy="-260" rx="1050" ry="630"/>
+      <path d="M500-260 L-200 400M500-260 L20 400M500-260 L220 400M500-260 L380 400M500-260 L500 400M500-260 L620 400M500-260 L780 400M500-260 L980 400M500-260 L1200 400"/>
+    </svg>
+    <i class="ring"></i><i class="planet"></i>
+  </div>
+  <div class="sky-layer sky-qigana"><i></i><i></i><i></i></div>
+  <div class="sky-layer sky-archive"></div>
+  <div class="sky-layer sky-celestara"><i></i><i></i><i></i></div>
+  <div class="sky-grain"></div>
+</div>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="/" data-nav>
+      <img src="/assets/logo-96.webp" width="96" height="91" alt="">
+      <span>Qhantom</span>
+    </a>
+    <nav class="nav-primary" aria-label="Primary">
+      <a href="/qonvergence" data-nav aria-current="page">Qonvergence</a>
+      <a href="/realm-runners" data-nav>Realm Runners</a>
+      <a href="/fashion" data-nav>Shop</a>
+    </nav>
+    <nav class="nav-secondary" aria-label="Company">
+      <a href="/company" data-nav>About</a>
+      <a href="/careers" data-nav>Careers</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-panel">Menu</button>
+  </div>
+  <nav class="menu-panel" id="menu-panel" aria-label="All destinations" hidden>
+    <a href="/" data-nav>Home</a>
+    <a href="/qonvergence" data-nav aria-current="page">Qonvergence</a>
+    <a href="/realm-runners" data-nav>Realm Runners</a>
+    <a class="sub" href="/sonics" data-nav data-exact>Sonics · music</a>
+    <a class="sub" href="/realm-runners/archive" data-nav data-exact>Archive</a>
+    <a href="/fashion" data-nav>Shop</a>
+    <a href="/company" data-nav>About</a>
+    <a href="/careers" data-nav>Careers</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<main id="main">
+<section class="view" data-view="qonvergence">
+  <div class="wrap stack">
+    <header class="head">
+      <h1 class="display" tabindex="-1">Qonvergence•<wbr>Worlds</h1>
+      <p class="lede">We are engineering the foundational substrate for persistent digital realities. While the current frontier scales compute to generate real-time video, Qonvergence computes the underlying spatial intelligence—the physical, economic, and cognitive ground truth required for autonomous agent societies.</p>
+      <p class="deploy"><strong>Current Deployment:</strong> Lab environment testing atomic memory and economic continuity under partial observability.</p>
+    </header>
+
+    <figure class="lab"><img src="/assets/worlds-lab.webp" width="1672" height="941" alt="A hooded figure looks down through curved glass at a miniature city of crystal spires under an aurora"></figure>
+
+    <section class="block">
+      <p class="eyebrow">The Gateway</p>
+      <h2>Enforcing Subjective Reality</h2>
+      <p>Current architectures default to global state access, inducing artificial omniscience. Autonomous models discover hidden inventory, locked coordinates, and future events simply by reading an unfiltered context window.</p>
+      <p>The Observation Gateway introduces strict partial observability. By computing true line-of-sight, occlusion, and spatial presence at the infrastructure level, models are forced to reason solely over localized, physically perceived reality.</p>
+    </section>
+
+    <section class="block">
+      <p class="eyebrow">The Transaction</p>
+      <h2>Atomic Spatial State</h2>
+      <p>A persistent world cannot tolerate partial failures. Physical movement, semantic memory, and economic trades must resolve together. Qonvergence binds spatial geometry, agent cognition, and ledger events into a singular, unbreakable transaction.</p>
+      <ul class="steps">
+        <li><strong>Economic Determinism</strong><span>Concurrent agent interactions are resolved through atomic ledger locks. Duplicate supply and double-spends are mathematically eliminated.</span></li>
+        <li><strong>Cognitive Persistence</strong><span>In the event of a system halt, agents recover exact physical and semantic memory. Zero unobserved facts are invented; zero committed effects are lost.</span></li>
+        <li><strong>Asynchronous Cognition</strong><span>The deterministic physics grid operates continuously. Agent reasoning is decoupled into discrete, batched ticks, preserving temporal consistency while minimizing inference overhead.</span></li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <p class="eyebrow">The Architecture</p>
+      <h2>The Spatial Intelligence Substrate</h2>
+      <p>A headless architecture designed for engine-agnostic deployment.</p>
+      <div class="w-arch" role="img" aria-label="The Ledger, The Simulation and The Presentation in a row, with The Membrane, the Observation Gateway, between the simulation and the cognitive model.">
+        <div class="w-pillar p1"><strong>The Ledger</strong><span>The absolute authority for economic state and permanent event history.</span></div>
+        <span class="w-arrow a1" aria-hidden="true"></span>
+        <div class="w-pillar p2"><strong>The Simulation</strong><span>The active spatial grid and bounding-box physics calculator.</span></div>
+        <div class="w-gate"><span class="w-down" aria-hidden="true"></span><div class="w-gate-box"><strong>The Membrane</strong><span>The Observation Gateway bridging the physical simulation and the cognitive model.</span></div><span class="w-down" aria-hidden="true"></span><div class="w-llm">Cognitive model</div></div>
+        <span class="w-arrow a2" aria-hidden="true"></span>
+        <div class="w-pillar p3"><strong>The Presentation</strong><span>Agnostic output. Stream structured reality to any renderer (Three.js, Unreal, Godot).</span></div>
+      </div>
+    </section>
+
+    <section class="block" id="papers">
+      <h2>Research papers</h2>
+      <div class="rows">
+        <div class="row is-static"><span class="row-main"><strong>AI Omniscience</strong><span>How unfiltered global state gives autonomous models knowledge they shouldn’t have.</span></span><span class="ext soon">Forthcoming</span></div>
+      </div>
+    </section>
+
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <nav aria-label="Footer">
+      <a href="/company" data-nav>About</a>
+      <a href="/careers" data-nav>Careers</a>
+    </nav>
+    <p class="foot-contact"><span class="addr">hello@qhantom.com</span></p>
+    <p class="foot-copy">© 2026 Qhantom</p>
+  </div>
+</footer>
+<script src="/app.js"></script>
+</body>
+</html>
